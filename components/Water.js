@@ -92,6 +92,7 @@ function WaterComponent() {
                 >
                   <a>
                     <li
+                      key={obj.id}
                       onClick={() => {
                         setSelected(obj.name);
                         setSelectedIndex(index);
@@ -119,6 +120,7 @@ function WaterComponent() {
             >
               {graniteTiles.map((obj, index) => (
                 <Link
+                  key={obj.id}
                   href={{
                     query: { brand: obj.name },
                   }}

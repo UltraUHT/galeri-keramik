@@ -111,6 +111,7 @@ function MortarComponent() {
             >
               {graniteTiles.map((obj, index) => (
                 <Link
+                  key={obj.id}
                   href={{
                     query: { brand: obj.name },
                   }}
