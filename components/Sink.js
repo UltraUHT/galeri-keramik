@@ -17,17 +17,17 @@ const graniteTiles = [
 
 function SinkComponent() {
   const [selected, setSelected] = useState("FICO");
-  const useSelected = (type) => {
-    setSelected(type);
-    setPdf("");
-  };
+  // const useSelected = (type) => {
+  //   setSelected(type);
+  //   setPdf("");
+  // };
   const selectedLogo = graniteTiles.filter((obj) => obj.name === selected);
   const pdfList = selectedLogo.map((obj) => obj.link);
 
   const [pdf, setPdf] = useState("");
-  const usePdf = (t) => {
-    setPdf(t);
-  };
+  // const usePdf = (t) => {
+  //   setPdf(t);
+  // };
 
   return (
     <div className="flex justify-center w-full pt-[20px]">
@@ -61,7 +61,11 @@ function SinkComponent() {
               {graniteTiles.map((obj) => (
                 <li
                   key={obj.id}
-                  onClick={() => useSelected(obj.name)}
+                  //onClick={() => useSelected(obj.name)}
+                  onClick={() => {
+                    setSelected(obj.name);
+                    setPdf("");
+                  }}
                   className={
                     selected === obj.name
                       ? `font-bold underline underline-offset-4 drop-shadow-md`
@@ -76,7 +80,11 @@ function SinkComponent() {
               {graniteTiles.map((obj) => (
                 <option
                   key={obj.id}
-                  onClick={() => useSelected(obj.name)}
+                  //onClick={() => useSelected(obj.name)}
+                  onClick={() => {
+                    setSelected(obj.name);
+                    setPdf("");
+                  }}
                   value={obj.name}
                 >
                   {obj.name}
@@ -102,7 +110,8 @@ function SinkComponent() {
                   <div
                     key={obj}
                     className="flex flex-col items-center gap-[8px] w-[180px]"
-                    onClick={() => usePdf(obj)}
+                    //onClick={() => usePdf(obj)}
+                    onClick={() => setPdf(obj)}
                   >
                     <div className="border w-[90px] h-[90px] xl:w-[150px] xl:h-[150px] relative">
                       <Image

@@ -65,9 +65,9 @@ const productType2 = [
 
 function Products() {
   const [selected, setSelected] = useState("Granite Tile");
-  const useSelected = (type) => {
-    setSelected(type);
-  };
+  // const useSelected = (type) => {
+  //   setSelected(type);
+  // };
   const selectedLogo = productType2.filter((obj) => obj.name === selected);
   const selectedBrand = selectedLogo.map((obj) => obj.brand);
   const linkTo = selected.replace(/\s+/g, "-").toLowerCase();
@@ -86,7 +86,7 @@ function Products() {
               {productType2.map((obj) => (
                 <li
                   key={obj.id}
-                  onClick={() => useSelected(obj.name)}
+                  onClick={() => setSelected(obj.name)}
                   className={
                     selected === obj.name
                       ? `underline underline-offset-4 drop-shadow-md`
