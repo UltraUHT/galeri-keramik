@@ -39,10 +39,21 @@ const graniteTiles = [
   },
 ];
 
+const mainImage = (props) => {
+  return (
+    <Image
+      className="object-contain cursor-pointer"
+      src={`/products/Water Appliances/${props}/highlight/1.png`}
+      alt="highlight product 1"
+      layout="fill"
+    />
+  );
+};
+
 function WaterComponent() {
   const router = useRouter();
   const query = router.query;
-  const brand = query.brand;
+  const brand = query.brand || "ARISTON";
   const [selected, setSelected] = useState(brand);
   const [selectedIndex, setSelectedIndex] = useState("0");
 
@@ -52,7 +63,6 @@ function WaterComponent() {
   const [pdf, setPdf] = useState("");
   const [pdfLink, setPdfLink] = useState("");
   const googlePdf = selectedLogo[0].pdf[pdfLink];
-  console.log(brand);
 
   return (
     <div className="flex justify-center w-full pt-[20px]">
@@ -141,35 +151,10 @@ function WaterComponent() {
           <div className="lg:w-4/5">
             {brand}
             <div className="w-full h-[165px] border sm:h-[240px] md:h-[320px] lg:h-[350px] xl:h-[400px] 2xl:h-[514px] relative">
-              {brand === "ARISTON" ? (
-                <Image
-                  className="object-contain cursor-pointer"
-                  src={`/products/Water Appliances/ARISTON/highlight/1.png`}
-                  alt="highlight product 1"
-                  layout="fill"
-                />
-              ) : brand === "PROFIL TANK" ? (
-                <Image
-                  className="object-contain cursor-pointer"
-                  src={`/products/Water Appliances/PROFIL TANK/highlight/1.png`}
-                  alt="highlight product 1"
-                  layout="fill"
-                />
-              ) : brand === "SOLAHART" ? (
-                <Image
-                  className="object-contain cursor-pointer"
-                  src={`/products/Water Appliances/SOLAHART/highlight/1.png`}
-                  alt="highlight product 1"
-                  layout="fill"
-                />
-              ) : brand === "TIRTA TANK" ? (
-                <Image
-                  className="object-contain cursor-pointer"
-                  src={`/products/Water Appliances/TIRTA TANK/highlight/1.png`}
-                  alt="highlight product 1"
-                  layout="fill"
-                />
-              ) : null}
+              {brand === "ARISTON" ? mainImage("ARISTON") : null}
+              {brand === "PROFIL TANK" ? mainImage("PROFIL TANK") : null}
+              {brand === "SOLAHART" ? mainImage("SOLAHART") : null}
+              {brand === "TIRTA TANK" ? mainImage("TIRTA TANK") : null}
             </div>
             <div className="pt-[40px]">
               <h2>About Product</h2>

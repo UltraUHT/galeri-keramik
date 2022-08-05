@@ -155,6 +155,17 @@ const graniteTiles = [
   },
 ];
 
+const mainImage = (props) => {
+  return (
+    <Image
+      className="object-contain cursor-pointer"
+      src={`/products/Water Appliances/${props}/highlight/1.png`}
+      alt="highlight product 1"
+      layout="fill"
+    />
+  );
+};
+
 function GraniteComponent() {
   const router = useRouter();
   const query = router.query;
@@ -254,12 +265,23 @@ function GraniteComponent() {
           </div>
           <div className="lg:w-4/5">
             <div className="w-full h-[165px] border sm:h-[240px] md:h-[320px] lg:h-[350px] xl:h-[400px] 2xl:h-[514px] relative">
-              <Image
-                className="object-contain cursor-pointer"
-                src={`/products/Granite Tile/${brand}/highlight/1.png`}
-                alt="highlight product 1"
-                layout="fill"
-              />
+              {brand === "EFATA" ? mainImage("EFATA") : null}
+              {brand === "ESSENZA" ? mainImage("ESSENZA") : null}
+              {brand === "FICO" ? mainImage("FICO") : null}
+              {brand === "GRANITO" ? mainImage("GRANITO") : null}
+              {brand === "INDOGRESS" ? mainImage("INDOGRESS") : null}
+              {brand === "INFINITI" ? mainImage("INFINITI") : null}
+              {brand === "NIRO" ? mainImage("NIRO") : null}
+              {brand === "PORTINO" ? mainImage("PORTINO") : null}
+              {brand === "ROMAN GRANIT" ? mainImage("ROMAN GRANIT") : null}
+              {brand === "SANDIMAS" ? mainImage("SANDIMAS") : null}
+              {brand === "SUMMIT" ? mainImage("SUMMIT") : null}
+              {brand === "TITANIUM" ? mainImage("TITANIUM") : null}
+              {brand === "VALENTINO GRESS"
+                ? mainImage("VALENTINO GRESS")
+                : null}
+              {brand === "VENUS TILES" ? mainImage("VENUS TILES") : null}
+              {brand === "VINCENZA" ? mainImage("VINCENZA") : null}
             </div>
             <div className="pt-[40px]">
               <h2>About Product</h2>

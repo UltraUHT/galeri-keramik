@@ -72,6 +72,17 @@ const graniteTiles = [
   },
 ];
 
+const mainImage = (props) => {
+  return (
+    <Image
+      className="object-contain cursor-pointer"
+      src={`/products/Water Appliances/${props}/highlight/1.png`}
+      alt="highlight product 1"
+      layout="fill"
+    />
+  );
+};
+
 function CeramicComponent() {
   const router = useRouter();
   const query = router.query;
@@ -174,12 +185,14 @@ function CeramicComponent() {
           </div>
           <div className="lg:w-4/5">
             <div className="w-full h-[165px] border sm:h-[240px] md:h-[320px] lg:h-[350px] xl:h-[400px] 2xl:h-[514px] relative">
-              <Image
-                className="object-contain cursor-pointer"
-                src={`/products/Ceramic/${brand}/highlight/1.png`}
-                alt="highlight product 1"
-                layout="fill"
-              />
+              {brand === "HABITAT" ? mainImage("HABITAT") : null}
+              {brand === "HERKULES" ? mainImage("HERKULES") : null}
+              {brand === "IKAD" ? mainImage("IKAD") : null}
+              {brand === "JUPITER" ? mainImage("JUPITER") : null}
+              {brand === "IKAD" ? mainImage("IKAD") : null}
+              {brand === "MILAN" ? mainImage("MILAN") : null}
+              {brand === "PLATINUM" ? mainImage("PLATINUM") : null}
+              {brand === "ROMAN" ? mainImage("ROMAN") : null}
             </div>
             <div className="pt-[40px]">
               <h2>About Product</h2>

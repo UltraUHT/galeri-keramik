@@ -53,6 +53,17 @@ const mataDoorSliding = [
   "WILD FLOWERS",
 ];
 
+const mainImage = (props) => {
+  return (
+    <Image
+      className="object-contain cursor-pointer"
+      src={`/products/Water Appliances/${props}/highlight/1.png`}
+      alt="highlight product 1"
+      layout="fill"
+    />
+  );
+};
+
 function DoorComponent() {
   const router = useRouter();
   const query = router.query;
@@ -153,6 +164,9 @@ function DoorComponent() {
           </div>
           <div className="lg:w-4/5">
             <div className="w-full h-[165px] border sm:h-[240px] md:h-[320px] lg:h-[350px] xl:h-[400px] 2xl:h-[514px] relative">
+              {brand === "MATADOOR" ? mainImage("MATADOOR") : null}
+              {brand === "ANGZDOOR" ? mainImage("ANGZDOOR") : null}
+              {brand === "TOP DOOR" ? mainImage("TOP DOOR") : null}
               <Image
                 className="object-contain cursor-pointer"
                 src={`/products/Door/${brand}/highlight/1.png`}
