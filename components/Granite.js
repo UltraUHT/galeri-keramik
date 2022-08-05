@@ -219,10 +219,16 @@ function GraniteComponent() {
                 ))}
                 {pdf ? (
                   <div className="w-full relative pt-[40px]">
-                    <iframe
-                      src={`https://docs.google.com/viewerng/viewer?url=https://galeri-keramik.vercel.app/products/Granite Tile/${selected}/pdf/${pdf}.pdf`}
+                    {/* <iframe
+                      src={`/products/Granite Tile/${selected}/pdf/${pdf}.pdf`}
                       type="application/pdf"
                       className="w-full h-[450px] sm:h-[900px]"
+                    ></iframe> */}
+                    <iframe
+                      src="https://drive.google.com/file/d/183YxWOV-Wrs7Tfs_lcomFPu1hZWzCa4P/preview"
+                      width="640"
+                      height="480"
+                      allow="autoplay"
                     ></iframe>
                   </div>
                 ) : null}
