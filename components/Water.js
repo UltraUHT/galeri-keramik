@@ -139,12 +139,35 @@ function WaterComponent() {
           </div>
           <div className="lg:w-4/5">
             <div className="w-full h-[165px] border sm:h-[240px] md:h-[320px] lg:h-[350px] xl:h-[400px] 2xl:h-[514px] relative">
-              <Image
-                className="object-contain cursor-pointer"
-                src={`/products/Water Appliances/${brand}/highlight/1.png`}
-                alt="highlight product 1"
-                layout="fill"
-              />
+              {brand === "ARISTON" ? (
+                <Image
+                  className="object-contain cursor-pointer"
+                  src={`/products/Water Appliances/ARISTON/highlight/1.png`}
+                  alt="highlight product 1"
+                  layout="fill"
+                />
+              ) : brand === "PROFIL TANK" ? (
+                <Image
+                  className="object-contain cursor-pointer"
+                  src={`/products/Water Appliances/PROFIL TANK/highlight/1.png`}
+                  alt="highlight product 1"
+                  layout="fill"
+                />
+              ) : brand === "SOLAHART" ? (
+                <Image
+                  className="object-contain cursor-pointer"
+                  src={`/products/Water Appliances/SOLAHART/highlight/1.png`}
+                  alt="highlight product 1"
+                  layout="fill"
+                />
+              ) : brand === "TIRTA TANK" ? (
+                <Image
+                  className="object-contain cursor-pointer"
+                  src={`/products/Water Appliances/TIRTA TANK/highlight/1.png`}
+                  alt="highlight product 1"
+                  layout="fill"
+                />
+              ) : null}
             </div>
             <div className="pt-[40px]">
               <h2>About Product</h2>

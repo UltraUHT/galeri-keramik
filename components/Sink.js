@@ -129,14 +129,14 @@ function SinkComponent() {
                   alt="highlight product 1"
                   layout="fill"
                 />
-              ) : (
+              ) : brand === "ROYAL" ? (
                 <Image
                   className="object-contain cursor-pointer"
                   src={`/products/Sink/ROYAL/highlight/1.png`}
                   alt="highlight product 1"
                   layout="fill"
                 />
-              )}
+              ) : null}
             </div>
 
             <div className="py-[40px] xl:pb-0">
