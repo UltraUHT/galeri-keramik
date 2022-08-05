@@ -17,6 +17,16 @@ function Hero() {
     "/hero/5.png",
   ];
 
+  const imageLink = [
+    "/product/granite-tile",
+    "/product/door",
+    "/product/granite-tile",
+    "/product/sanitary",
+    "/product/sanitary",
+  ];
+
+  const imageQuery = ["NIRO", "MATADOOR", "TITANIUM", "TOTO", "FLIESSEN"];
+
   const handleNext = () => {
     setTransL(true);
     setTransR(false);
@@ -45,21 +55,28 @@ function Hero() {
     setIndex1(index + 1) % images.length;
   };
 
+  const l0 = imageLink[index0];
+  const q0 = imageQuery[index0];
+
   return (
     <div className="flex flex-col justify-center items-center">
       <div className="w-full h-[152px] sm:h-[260px] md:h-[310px] lg:h-[450px] xl:h-[550px] 2xl:h-[780px] relative overflow-hidden flex items-center justify-center">
-        <Image
-          className={`absolute object-contain z-10 w-full h-full ${
-            transL
-              ? "transition duration-500 ease-linear transform -translate-x-full"
-              : transR
-              ? "animate-slideL"
-              : ""
-          }`}
-          src={images[index0]}
-          layout="fill"
-          alt=""
-        />
+        <Link href={{ pathname: `${l0}`, query: { brand: q0 } }} passHref>
+          <a>
+            <Image
+              className={`absolute object-contain z-10 w-full h-full ${
+                transL
+                  ? "transition duration-500 ease-linear transform -translate-x-full"
+                  : transR
+                  ? "animate-slideL"
+                  : ""
+              }`}
+              src={images[index0]}
+              layout="fill"
+              alt=""
+            />
+          </a>
+        </Link>
         <Image
           className={`absolute object-contain w-full h-full ${
             transL
