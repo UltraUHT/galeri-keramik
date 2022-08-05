@@ -51,7 +51,7 @@ function WaterComponent() {
 
   const [pdf, setPdf] = useState("");
   const [pdfLink, setPdfLink] = useState("");
-  const googlePdf = graniteTiles[selectedIndex].pdf[pdfLink];
+  const googlePdf = selectedLogo[0].pdf[pdfLink];
 
   return (
     <div className="flex justify-center w-full pt-[20px]">
@@ -99,7 +99,7 @@ function WaterComponent() {
                         setPdf("");
                       }}
                       className={
-                        selected === obj.name
+                        brand === obj.name
                           ? `font-bold underline underline-offset-4 drop-shadow-md`
                           : null
                       }
@@ -123,9 +123,17 @@ function WaterComponent() {
               }}
             >
               {graniteTiles.map((obj, index) => (
-                <option key={obj.id} value={obj.name + index}>
-                  {obj.name}
-                </option>
+                <>
+                  {obj.name === brand ? (
+                    <option key={obj.id} value={obj.name + index} selected>
+                      {obj.name}
+                    </option>
+                  ) : (
+                    <option key={obj.id} value={obj.name + index}>
+                      {obj.name}
+                    </option>
+                  )}
+                </>
               ))}
             </select>
           </div>
