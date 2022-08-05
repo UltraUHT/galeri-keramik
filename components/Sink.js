@@ -25,11 +25,11 @@ const graniteTiles = [
 function SinkComponent() {
   const router = useRouter();
   const query = router.query;
-  const selectedBrand = query.brand || "FICO";
-  const [selected, setSelected] = useState(selectedBrand);
+  const brand = query.brand || "FICO";
+  const [selected, setSelected] = useState(brand);
   const [selectedIndex, setSelectedIndex] = useState("0");
 
-  const selectedLogo = graniteTiles.filter((obj) => obj.name === selected);
+  const selectedLogo = graniteTiles.filter((obj) => obj.name === brand);
   const pdfList = selectedLogo.map((obj) => obj.link);
 
   const [pdf, setPdf] = useState("");
@@ -120,7 +120,7 @@ function SinkComponent() {
             <div className="w-full h-[165px] border sm:h-[240px] md:h-[320px] lg:h-[350px] xl:h-[400px] 2xl:h-[514px] relative">
               <Image
                 className="object-contain cursor-pointer"
-                src={`/products/Sink/${selected}/highlight/1.png`}
+                src={`/products/Sink/${brand}/highlight/1.png`}
                 alt="highlight product 1"
                 layout="fill"
               />
@@ -142,7 +142,7 @@ function SinkComponent() {
                     <div className="border w-[90px] h-[90px] xl:w-[150px] xl:h-[150px] relative">
                       <Image
                         className="object-contain cursor-pointer"
-                        src={`/products/Sink/${selected}/pdf/${obj}.png`}
+                        src={`/products/Sink/${brand}/pdf/${obj}.png`}
                         alt="logo"
                         layout="fill"
                       />
@@ -153,7 +153,7 @@ function SinkComponent() {
                 {pdf ? (
                   <div className="w-full flex relative pt-[40px]">
                     <iframe
-                      src={`/products/Sink/${selected}/pdf/${pdf}.pdf`}
+                      src={`/products/Sink/${brand}/pdf/${pdf}.pdf`}
                       type="application/pdf"
                       className="w-full h-[900px] hidden md:flex"
                     ></iframe>

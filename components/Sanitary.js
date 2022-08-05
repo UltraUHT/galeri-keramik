@@ -61,11 +61,11 @@ const graniteTiles = [
 function SanitaryComponent() {
   const router = useRouter();
   const query = router.query;
-  const selectedBrand = query.brand || "AMERICAN STANDARD";
-  const [selected, setSelected] = useState(selectedBrand);
+  const brand = query.brand || "AMERICAN STANDARD";
+  const [selected, setSelected] = useState(brand);
   const [selectedIndex, setSelectedIndex] = useState("0");
 
-  const selectedLogo = graniteTiles.filter((obj) => obj.name === selected);
+  const selectedLogo = graniteTiles.filter((obj) => obj.name === brand);
   const pdfList = selectedLogo.map((obj) => obj.link);
 
   const [pdf, setPdf] = useState("");
@@ -156,14 +156,14 @@ function SanitaryComponent() {
             <div className="w-full h-[165px] border sm:h-[240px] md:h-[320px] lg:h-[350px] xl:h-[400px] 2xl:h-[514px] relative">
               <Image
                 className="object-contain cursor-pointer"
-                src={`/products/Sanitary/${selected}/highlight/1.png`}
+                src={`/products/Sanitary/${brand}/highlight/1.png`}
                 alt="highlight product 1"
                 layout="fill"
               />
             </div>
             <div className="pt-[40px]">
               <h2>About Product</h2>
-              {selected === "AMERICAN STANDARD" ? (
+              {brand === "AMERICAN STANDARD" ? (
                 <p className="pt-[25px]">
                   Selama lebih dari 140 tahun American Standard telah memimpin
                   dalam pengembangan produk kamar mandi dan dapur yang inovatif
@@ -175,7 +175,7 @@ function SanitaryComponent() {
                   kami untuk informasi lebih lanjut.
                 </p>
               ) : null}
-              {selected === "FLIESSEN" ? (
+              {brand === "FLIESSEN" ? (
                 <>
                   <p className="pt-[25px]">
                     fließen shower drain adalah saringan pembuangan air yang
@@ -246,7 +246,7 @@ function SanitaryComponent() {
                       <div className="w-full h-[215px] sm:h-[280px] md:h-[380px] xl:h-[500px] 2xl:h-[620px] relative flex-shrink-0">
                         <Image
                           className="object-contain cursor-pointer"
-                          src={`/products/Sanitary/${selected}/products/fliessen.png`}
+                          src={`/products/Sanitary/${brand}/products/fliessen.png`}
                           alt="fliessen image"
                           layout="fill"
                         />
@@ -258,7 +258,7 @@ function SanitaryComponent() {
                         <div className="w-[300px] h-[230px] sm:w-[400px] sm:h-[310px] md:w-[500px] md:h-[390px] relative flex-shrink-0">
                           <Image
                             className="object-contain cursor-pointer"
-                            src={`/products/Sanitary/${selected}/products/fliessen 1.png`}
+                            src={`/products/Sanitary/${brand}/products/fliessen 1.png`}
                             alt="fliessen image 1"
                             layout="fill"
                           />
@@ -299,7 +299,7 @@ function SanitaryComponent() {
                   </div>
                 </>
               ) : null}
-              {selected === "ROCA" ? (
+              {brand === "ROCA" ? (
                 <p className="pt-[25px]">
                   ROCA menyediakan berbagai macam produk kamar mandi.
                   <br />
@@ -308,7 +308,7 @@ function SanitaryComponent() {
                   informasi lebih lanjut.
                 </p>
               ) : null}
-              {selected === "SANDIMAS OULU" ? (
+              {brand === "SANDIMAS OULU" ? (
                 <p className="pt-[25px]">
                   OULU menyediakan berbagai macam produk kamar mandi.
                   <br />
@@ -317,7 +317,7 @@ function SanitaryComponent() {
                   informasi lebih lanjut.
                 </p>
               ) : null}
-              {selected === "TOTO" ? (
+              {brand === "TOTO" ? (
                 <p className="pt-[25px]">
                   TOTO adalah produsen toilet terbesar di dunia yang didirikan
                   pada tahun 1917 di Jepang. Didorong oleh semangat kesempurnaan
@@ -347,7 +347,7 @@ function SanitaryComponent() {
                     <div className="border w-[90px] h-[90px] xl:w-[150px] xl:h-[150px] relative">
                       <Image
                         className="object-contain cursor-pointer"
-                        src={`/products/Sanitary/${selected}/pdf/${obj}.png`}
+                        src={`/products/Sanitary/${brand}/pdf/${obj}.png`}
                         alt="logo"
                         layout="fill"
                       />
@@ -358,7 +358,7 @@ function SanitaryComponent() {
                 {pdf ? (
                   <div className="w-full flex relative pt-[40px]">
                     <iframe
-                      src={`/products/Sanitary/${selected}/pdf/${pdf}.pdf`}
+                      src={`/products/Sanitary/${brand}/pdf/${pdf}.pdf`}
                       type="application/pdf"
                       className="w-full h-[900px] hidden md:flex"
                     ></iframe>

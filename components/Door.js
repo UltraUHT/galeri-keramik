@@ -56,11 +56,11 @@ const mataDoorSliding = [
 function DoorComponent() {
   const router = useRouter();
   const query = router.query;
-  const selectedBrand = query.brand || "MATADOOR";
-  const [selected, setSelected] = useState(selectedBrand);
+  const brand = query.brand || "MATADOOR";
+  const [selected, setSelected] = useState(brand);
   const [selectedIndex, setSelectedIndex] = useState("0");
 
-  const selectedLogo = graniteTiles.filter((obj) => obj.name === selected);
+  const selectedLogo = graniteTiles.filter((obj) => obj.name === brand);
   const pdfList = selectedLogo.map((obj) => obj.link);
 
   const [pdf, setPdf] = useState("");
@@ -151,13 +151,13 @@ function DoorComponent() {
             <div className="w-full h-[165px] border sm:h-[240px] md:h-[320px] lg:h-[350px] xl:h-[400px] 2xl:h-[514px] relative">
               <Image
                 className="object-contain cursor-pointer"
-                src={`/products/Door/${selected}/highlight/1.png`}
+                src={`/products/Door/${brand}/highlight/1.png`}
                 alt="highlight product 1"
                 layout="fill"
               />
             </div>
             <div className="pt-[40px]">
-              {selected === "ANGZDOOR" ? (
+              {brand === "ANGZDOOR" ? (
                 <>
                   <h2>About Product</h2>
                   <p className="pt-[25px]">
@@ -169,7 +169,7 @@ function DoorComponent() {
                   </p>
                 </>
               ) : null}
-              {selected === "TOP DOOR" ? (
+              {brand === "TOP DOOR" ? (
                 <>
                   <h2>About Product</h2>
                   <p className="pt-[25px]">
@@ -181,7 +181,7 @@ function DoorComponent() {
                   </p>
                 </>
               ) : null}
-              {selected === "MATADOOR" ? (
+              {brand === "MATADOOR" ? (
                 <>
                   <h2>About Product</h2>
                   <p className="pt-[25px]">
@@ -248,7 +248,7 @@ function DoorComponent() {
                           <div className="w-[110px] xl:w-[220px] h-[300px] relative flex-shrink-0">
                             <Image
                               className="object-contain cursor-pointer"
-                              src={`/products/Door/${selected}/products/sliding/${door}.png`}
+                              src={`/products/Door/${brand}/products/sliding/${door}.png`}
                               alt={door}
                               layout="fill"
                             />
@@ -262,7 +262,7 @@ function DoorComponent() {
                         <div className="w-[220px] h-[300px] relative flex-shrink-0">
                           <Image
                             className="object-contain cursor-pointer"
-                            src={`/products/Door/${selected}/products/sliding/PINTU ALUMINIUM.png`}
+                            src={`/products/Door/${brand}/products/sliding/PINTU ALUMINIUM.png`}
                             alt="spesifikasi pintu aluminium sliding"
                             layout="fill"
                           />
@@ -300,7 +300,7 @@ function DoorComponent() {
                           <div className="w-[110px] xl:w-[220px] h-[300px] relative flex-shrink-0">
                             <Image
                               className="object-contain cursor-pointer"
-                              src={`/products/Door/${selected}/products/door/${door}.png`}
+                              src={`/products/Door/${brand}/products/door/${door}.png`}
                               alt={door}
                               layout="fill"
                             />
@@ -350,7 +350,7 @@ function DoorComponent() {
                     <div className="border w-[90px] h-[90px] xl:w-[150px] xl:h-[150px] relative">
                       <Image
                         className="object-contain cursor-pointer"
-                        src={`/products/Door/${selected}/pdf/${obj}.png`}
+                        src={`/products/Door/${brand}/pdf/${obj}.png`}
                         alt="logo"
                         layout="fill"
                       />
@@ -361,7 +361,7 @@ function DoorComponent() {
                 {pdf ? (
                   <div className="w-full flex relative pt-[40px]">
                     <iframe
-                      src={`/products/Door/${selected}/pdf/${pdf}.pdf`}
+                      src={`/products/Door/${brand}/pdf/${pdf}.pdf`}
                       type="application/pdf"
                       className="w-full h-[900px] hidden md:flex"
                     ></iframe>

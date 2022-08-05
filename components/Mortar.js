@@ -33,11 +33,11 @@ const graniteTiles = [
 function MortarComponent() {
   const router = useRouter();
   const query = router.query;
-  const selectedBrand = query.brand || "AM";
-  const [selected, setSelected] = useState(selectedBrand);
+  const brand = query.brand || "AM";
+  const [selected, setSelected] = useState(brand);
   const [selectedIndex, setSelectedIndex] = useState("0");
 
-  const selectedLogo = graniteTiles.filter((obj) => obj.name === selected);
+  const selectedLogo = graniteTiles.filter((obj) => obj.name === brand);
   const pdfList = selectedLogo.map((obj) => obj.link);
 
   const [pdf, setPdf] = useState("");
@@ -128,14 +128,14 @@ function MortarComponent() {
             <div className="w-full h-[165px] border sm:h-[240px] md:h-[320px] lg:h-[350px] xl:h-[400px] 2xl:h-[514px] relative">
               <Image
                 className="object-contain cursor-pointer"
-                src={`/products/Mortar/${selected}/highlight/1.png`}
+                src={`/products/Mortar/${brand}/highlight/1.png`}
                 alt="highlight product 1"
                 layout="fill"
               />
             </div>
             <div className="pt-[40px]">
               <h2>About Product</h2>
-              {selected === "AM" ? (
+              {brand === "AM" ? (
                 <p className="pt-[25px]">
                   Selama lebih dari 30 tahun, AM telah menjadi pelopor bahan
                   bangunan. Memberikan solusi mulai dari pembangunan dinding
@@ -147,7 +147,7 @@ function MortarComponent() {
                   informasi lebih lanjut.
                 </p>
               ) : null}
-              {selected === "MU" ? (
+              {brand === "MU" ? (
                 <p className="pt-[25px]">
                   MU (Mortar Utama) merupakan produsen semen instan terbesar di
                   Indonesia, bagian dari Saint-Gobain Weber.
@@ -157,7 +157,7 @@ function MortarComponent() {
                   informasi lebih lanjut.
                 </p>
               ) : null}
-              {selected === "SIKA" ? (
+              {brand === "SIKA" ? (
                 <p className="pt-[25px]">
                   SIKA merupakan salah satu produsen semen instan terbesar di
                   Indonesia.
@@ -184,7 +184,7 @@ function MortarComponent() {
                     <div className="border w-[90px] h-[90px] xl:w-[150px] xl:h-[150px] relative">
                       <Image
                         className="object-contain cursor-pointer"
-                        src={`/products/Mortar/${selected}/pdf/${obj}.png`}
+                        src={`/products/Mortar/${brand}/pdf/${obj}.png`}
                         alt="logo"
                         layout="fill"
                       />
@@ -195,7 +195,7 @@ function MortarComponent() {
                 {pdf ? (
                   <div className="w-full flex relative pt-[40px]">
                     <iframe
-                      src={`/products/Mortar/${selected}/pdf/${pdf}.pdf`}
+                      src={`/products/Mortar/${brand}/pdf/${pdf}.pdf`}
                       type="application/pdf"
                       className="w-full h-[900px] hidden md:flex"
                     ></iframe>

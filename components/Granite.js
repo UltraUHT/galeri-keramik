@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 const graniteTiles = [
@@ -158,13 +158,14 @@ const graniteTiles = [
 function GraniteComponent() {
   const router = useRouter();
   const query = router.query;
-  const selectedBrand = query.brand || "EFATA";
-  const [selected, setSelected] = useState(selectedBrand);
+  const brand = query.brand || "EFATA";
+  const [selected, setSelected] = useState(brand);
+
   const [selectedIndex, setSelectedIndex] = useState("0");
 
-  const selectedLogo = graniteTiles.filter((obj) => obj.name === selected);
+  const selectedLogo = graniteTiles.filter((obj) => obj.name === brand);
   const pdfList = selectedLogo.map((obj) => obj.link);
-
+  console.log(brand);
   const [pdf, setPdf] = useState("");
   const [pdfLink, setPdfLink] = useState("");
   const googlePdf = graniteTiles[selectedIndex].pdf[pdfLink];
@@ -214,7 +215,7 @@ function GraniteComponent() {
                         setPdf("");
                       }}
                       className={
-                        selected === obj.name
+                        brand === obj.name
                           ? `font-bold underline underline-offset-4 drop-shadow-md`
                           : null
                       }
@@ -248,11 +249,11 @@ function GraniteComponent() {
               ))}
             </select>
           </div>
-          <div className="lg:w-4/5">
+          <div className="lg:w-4/5" key={router.asPath}>
             <div className="w-full h-[165px] border sm:h-[240px] md:h-[320px] lg:h-[350px] xl:h-[400px] 2xl:h-[514px] relative">
               <Image
                 className="object-contain cursor-pointer"
-                src={`/products/Granite Tile/${selected}/highlight/1.png`}
+                src={`/products/Granite Tile/${brand}/highlight/1.png`}
                 alt="highlight product 1"
                 layout="fill"
               />
@@ -260,12 +261,11 @@ function GraniteComponent() {
             <div className="pt-[40px]">
               <h2>About Product</h2>
               <p className="pt-[25px]">
-                {selected} merupakan salah satu merek granite tile yang
-                menyediakan berbagai macam ukuran dan motif untuk memenuhi
-                kebutuhan Anda.
+                {brand} merupakan salah satu merek granite tile yang menyediakan
+                berbagai macam ukuran dan motif untuk memenuhi kebutuhan Anda.
                 <br />
                 <br />
-                Berikut ini merupakan ecatalogue {selected}. Hubungi kami untuk
+                Berikut ini merupakan ecatalogue {brand}. Hubungi kami untuk
                 informasi lebih lanjut.
               </p>
             </div>
@@ -285,7 +285,7 @@ function GraniteComponent() {
                     <div className="border w-[90px] h-[90px] xl:w-[150px] xl:h-[150px] relative">
                       <Image
                         className="object-contain cursor-pointer"
-                        src={`/products/Granite Tile/${selected}/pdf/${obj}.png`}
+                        src={`/products/Granite Tile/${brand}/pdf/${obj}.png`}
                         alt="logo"
                         layout="fill"
                       />
@@ -296,7 +296,7 @@ function GraniteComponent() {
                 {pdf ? (
                   <div className="w-full flex relative pt-[40px]">
                     <iframe
-                      src={`/products/Granite Tile/${selected}/pdf/${pdf}.pdf`}
+                      src={`/products/Granite Tile/${brand}/pdf/${pdf}.pdf`}
                       type="application/pdf"
                       className="w-full h-[900px] hidden md:flex"
                     ></iframe>

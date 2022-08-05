@@ -75,11 +75,11 @@ const graniteTiles = [
 function CeramicComponent() {
   const router = useRouter();
   const query = router.query;
-  const selectedBrand = query.brand || "HABITAT";
-  const [selected, setSelected] = useState(selectedBrand);
+  const brand = query.brand || "HABITAT";
+  const [selected, setSelected] = useState(brand);
   const [selectedIndex, setSelectedIndex] = useState("0");
 
-  const selectedLogo = graniteTiles.filter((obj) => obj.name === selected);
+  const selectedLogo = graniteTiles.filter((obj) => obj.name === brand);
   const pdfList = selectedLogo.map((obj) => obj.link);
 
   const [pdf, setPdf] = useState("");
@@ -170,7 +170,7 @@ function CeramicComponent() {
             <div className="w-full h-[165px] border sm:h-[240px] md:h-[320px] lg:h-[350px] xl:h-[400px] 2xl:h-[514px] relative">
               <Image
                 className="object-contain cursor-pointer"
-                src={`/products/Ceramic/${selected}/highlight/1.png`}
+                src={`/products/Ceramic/${brand}/highlight/1.png`}
                 alt="highlight product 1"
                 layout="fill"
               />
@@ -178,11 +178,11 @@ function CeramicComponent() {
             <div className="pt-[40px]">
               <h2>About Product</h2>
               <p className="pt-[25px]">
-                {selected} merupakan salah satu merek keramik yang menyediakan
+                {brand} merupakan salah satu merek keramik yang menyediakan
                 berbagai macam ukuran dan motif untuk memenuhi kebutuhan Anda.
                 <br />
                 <br />
-                Berikut ini merupakan ecatalogue {selected}. Hubungi kami untuk
+                Berikut ini merupakan ecatalogue {brand}. Hubungi kami untuk
                 informasi lebih lanjut.
               </p>
             </div>
@@ -202,7 +202,7 @@ function CeramicComponent() {
                     <div className="border w-[90px] h-[90px] xl:w-[150px] xl:h-[150px] relative">
                       <Image
                         className="object-contain cursor-pointer"
-                        src={`/products/Ceramic/${selected}/pdf/${obj}.png`}
+                        src={`/products/Ceramic/${brand}/pdf/${obj}.png`}
                         alt="logo"
                         layout="fill"
                       />
@@ -213,7 +213,7 @@ function CeramicComponent() {
                 {pdf ? (
                   <div className="w-full flex relative pt-[40px]">
                     <iframe
-                      src={`/products/Ceramic/${selected}/pdf/${pdf}.pdf`}
+                      src={`/products/Ceramic/${brand}/pdf/${pdf}.pdf`}
                       type="application/pdf"
                       className="w-full h-[900px] hidden md:flex"
                     ></iframe>

@@ -74,7 +74,7 @@ function Products() {
   const [selected, setSelected] = useState("Granite Tile");
   const [selectedIndex, setSelectedIndex] = useState("0");
   const selectedLogo = productType2.filter((obj) => obj.name === selected);
-  const selectedBrand = selectedLogo.map((obj) => obj.brand);
+  const brand = selectedLogo.map((obj) => obj.brand);
   const selectedLink = productType2[selectedIndex].link;
 
   return (
@@ -194,7 +194,7 @@ function Products() {
               </div>
             </div>
             <div className="flex flex-wrap">
-              {selectedBrand[0].map((obj) => (
+              {brand[0].map((obj) => (
                 <div
                   key={obj}
                   className="w-[80px] h-[80px] xl:w-[110px] xl:h-[110px] animate-fadeDown relative"
