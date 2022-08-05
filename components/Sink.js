@@ -122,12 +122,21 @@ function SinkComponent() {
           </div>
           <div className="lg:w-4/5">
             <div className="w-full h-[165px] border sm:h-[240px] md:h-[320px] lg:h-[350px] xl:h-[400px] 2xl:h-[514px] relative">
-              <Image
-                className="object-contain cursor-pointer"
-                src={`/products/Sink/${brand}/highlight/1.png`}
-                alt="highlight product 1"
-                layout="fill"
-              />
+              {brand === "FICO" ? (
+                <Image
+                  className="object-contain cursor-pointer"
+                  src={`/products/Sink/FICO/highlight/1.png`}
+                  alt="highlight product 1"
+                  layout="fill"
+                />
+              ) : (
+                <Image
+                  className="object-contain cursor-pointer"
+                  src={`/products/Sink/ROYAL/highlight/1.png`}
+                  alt="highlight product 1"
+                  layout="fill"
+                />
+              )}
             </div>
 
             <div className="py-[40px] xl:pb-0">
