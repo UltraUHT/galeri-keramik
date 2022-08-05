@@ -1,47 +1,73 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 
 const graniteTiles = [
   {
     id: 1,
     name: "EFATA",
     link: ["EFATA JUNI 2022"],
+    pdf: [
+      "https://drive.google.com/file/d/1sbIN9TBzeXskMvYSPEAGSs4WtNKaVc3K/preview",
+    ],
   },
   {
     id: 2,
     name: "ESSENZA",
     link: ["ESSENZA catalogue"],
+    pdf: [
+      "https://drive.google.com/file/d/1ebYBnLYStJk7ms3Cqn56DxFlu67fCHRf/preview",
+    ],
   },
   {
     id: 3,
     name: "FICO",
     link: ["FICO GRESS GRANITE TILE"],
+    pdf: [
+      "https://drive.google.com/file/d/170aoLHvmW3Vr7poF6FYBLeHFgpIcW6ac/preview",
+    ],
   },
   {
     id: 4,
     name: "GRANITO",
     link: ["GRANITO 2022-8"],
+    pdf: [
+      "https://drive.google.com/file/d/12bGojGAkSXDCcwjb4sY6Yq-oeqtEsYjQ/preview",
+    ],
   },
   {
     id: 5,
     name: "INDOGRESS",
     link: ["INDOGRESS catalog 2022"],
+    pdf: [
+      "https://drive.google.com/file/d/12bGojGAkSXDCcwjb4sY6Yq-oeqtEsYjQ/preview",
+    ],
   },
   {
     id: 6,
     name: "INFINITI",
     link: ["INFINITI catalog 2021"],
+    pdf: [
+      "https://drive.google.com/file/d/1g9juLAxoEMZYKTyZsGImhHFyzugyLGUr/preview",
+    ],
   },
   {
     id: 7,
     name: "NIRO",
     link: ["NIRO BIG SLAB 2022", "NIRO REGULAR SIZE 2022"],
+    pdf: [
+      "https://drive.google.com/file/d/19iWnzoiFRP8dBWdNvLnuDsxZattyP33W/preview",
+      "https://drive.google.com/file/d/1Uq_WO5Nvr7Ly4WRgWpewX4m7RTaZOQxk/preview",
+    ],
   },
   {
     id: 8,
     name: "PORTINO",
     link: ["PORTINO catalogue 2022"],
+    pdf: [
+      "https://drive.google.com/file/d/13UyBJy08IsZedCVGIoJqAuIBENT0VNx8/preview",
+    ],
   },
   {
     id: 9,
@@ -55,26 +81,47 @@ const graniteTiles = [
       "ROMAN GRANIT VINTAGE 130721",
       "ROMAN GRANIT WOODMOOD 130721",
     ],
+    pdf: [
+      "https://drive.google.com/file/d/1oHGBPAc-4cV979DHPSVoktKWUownZveD/preview",
+      "https://drive.google.com/file/d/1Ss4QH01th7l4Wi_TKnPPgL2mzlUrIm04/preview",
+      "https://drive.google.com/file/d/1u7oWQrAXly3SxWbB15ULDVESS6DFTnOK/preview",
+      "https://drive.google.com/file/d/1plw7hbF55e4fH76HhGwi4JoburTD2r3d/preview",
+      "https://drive.google.com/file/d/1eE8sPXheqp5f5Dmt7HzoRUZvWJkukwVA/preview",
+      "https://drive.google.com/file/d/19CME8RPdyMB4FJejumVut8lse0K1u00B/preview",
+      "https://drive.google.com/file/d/1wPQAmZ6PDIiVQivy_QN00aHOxgY0JC41/preview",
+    ],
   },
   {
     id: 10,
     name: "SANDIMAS",
     link: ["SANDIMAS granite catalgoue 2022"],
+    pdf: [
+      "https://drive.google.com/file/d/1ntXmUK0DUJj6N6q1v8IMurqIYQAYhxvx/preview",
+    ],
   },
   {
     id: 11,
     name: "SUMMIT",
     link: ["SUMMIT catalog 2022"],
+    pdf: [
+      "https://drive.google.com/file/d/122H-k_YJ_53YIOA1pZ8HxQq0uWBuf9lB/preview",
+    ],
   },
   {
     id: 12,
     name: "TITANIUM",
     link: ["TITANIUM general catalog 0722"],
+    pdf: [
+      "https://drive.google.com/file/d/14JJbqDWaSJKcsQ8z-owlMK4Zyy7xZL8z/preview",
+    ],
   },
   {
     id: 13,
     name: "VALENTINO GRESS",
     link: ["VALENTINO GRESS RETAIL 2022"],
+    pdf: [
+      "https://drive.google.com/file/d/1vbkCC0gXn6p6gs5qHjqQuotCFaYLFMqv/preview",
+    ],
   },
   {
     id: 14,
@@ -83,6 +130,11 @@ const graniteTiles = [
       "2022_e-Catalogue VCI Jkt Venus Tiles",
       "2022_e-Catalogue Venus Tiles BIG SLAB",
       "2022_e-Catalogue Venus Tiles New Arrival (Q1)",
+    ],
+    pdf: [
+      "https://drive.google.com/file/d/1GA7zX-B6VC6us_VxEvDsDfALrtWFWzyp/preview",
+      "https://drive.google.com/file/d/1exp8fpCAqTBKJOD6_SgMNE27tRHsjkp6/preview",
+      "https://drive.google.com/file/d/1GfX0BxUzF3eFQVEhCvlAUB8GNGxnoY0d/preview",
     ],
   },
   {
@@ -94,17 +146,28 @@ const graniteTiles = [
       "Vicenza Rustic Tiles",
       "Vicenza Wood Ceramics",
     ],
+    pdf: [
+      "https://drive.google.com/file/d/13-9fVOD0Sb8xnCsB2xhOkPlCmVMLy_Kw/preview",
+      "https://drive.google.com/file/d/136ZPNgqX4CQPWcGoVy3RKRTrcPw2U5mY/preview",
+      "https://drive.google.com/file/d/137f5wD8O_lK3AWC4jCGYrfeZ6ftX0SMf/preview",
+      "https://drive.google.com/file/d/1303qWG12DouhlZat6nXaPP-N4hJqRuB-/preview",
+    ],
   },
 ];
 
 function GraniteComponent() {
-  const [selected, setSelected] = useState("EFATA");
+  const router = useRouter();
+  const query = router.query;
+  const selectedBrand = query.brand || "EFATA";
+  const [selected, setSelected] = useState(selectedBrand);
+  const [selectedIndex, setSelectedIndex] = useState("0");
 
   const selectedLogo = graniteTiles.filter((obj) => obj.name === selected);
   const pdfList = selectedLogo.map((obj) => obj.link);
 
   const [pdf, setPdf] = useState("");
-
+  const [pdfLink, setPdfLink] = useState("");
+  const googlePdf = graniteTiles[selectedIndex].pdf[pdfLink];
   return (
     <div className="flex justify-center w-full pt-[20px]">
       <div className="flex w-full flex-col gap-[40px] px-4 md:px-0 max-w-[500px] md:max-w-[640px] lg:max-w-[840px] xl:max-w-[980px] 2xl:max-w-[1280px]">
@@ -134,35 +197,52 @@ function GraniteComponent() {
         <div className="flex flex-col lg:flex-row w-full justify-between ">
           <div className="lg:w-1/5 w-full">
             <ul className="cursor-pointer hidden lg:flex flex-col gap-[20px]">
-              {graniteTiles.map((obj) => (
-                <li
+              {graniteTiles.map((obj, index) => (
+                <Link
                   key={obj.id}
-                  // onClick={() => useSelected(obj.name)}
-                  onClick={() => {
-                    setSelected(obj.name);
-                    setPdf("");
+                  href={{
+                    query: { brand: obj.name },
                   }}
-                  className={
-                    selected === obj.name
-                      ? `font-bold underline underline-offset-4 drop-shadow-md`
-                      : null
-                  }
+                  passHref
                 >
-                  {obj.name}
-                </li>
+                  <a>
+                    <li
+                      onClick={() => {
+                        setSelected(obj.name);
+                        setSelectedIndex(index);
+                        setPdf("");
+                      }}
+                      className={
+                        selected === obj.name
+                          ? `font-bold underline underline-offset-4 drop-shadow-md`
+                          : null
+                      }
+                    >
+                      {obj.name}
+                    </li>
+                  </a>
+                </Link>
               ))}
             </ul>
             <select
               className="w-full flex lg:hidden bg-white drop-shadow-sm border mb-[20px]"
               onChange={(e) => {
-                setSelected(e.target.value);
+                setSelected(e.target.value.replace(/[0-9]/g, ""));
+                setSelectedIndex(e.target.value.replace(/\D/g, ""));
                 setPdf("");
               }}
             >
-              {graniteTiles.map((obj) => (
-                <option key={obj.id} value={obj.name}>
-                  {obj.name}
-                </option>
+              {graniteTiles.map((obj, index) => (
+                <Link
+                  href={{
+                    query: { brand: obj.name },
+                  }}
+                  passHref
+                >
+                  <option key={obj.id} value={obj.name + index}>
+                    {obj.name}
+                  </option>
+                </Link>
               ))}
             </select>
           </div>
@@ -191,12 +271,14 @@ function GraniteComponent() {
               <h2>Read Our Catalog</h2>
 
               <div className="pt-[20px] flex flex-wrap gap-[20px]">
-                {pdfList[0].map((obj) => (
+                {pdfList[0].map((obj, index) => (
                   <div
                     key={obj}
                     className="flex flex-col items-center gap-[8px] w-[180px]"
-                    // onClick={() => usePdf(obj)}
-                    onClick={() => setPdf(obj)}
+                    onClick={() => {
+                      setPdf(obj);
+                      setPdfLink(index);
+                    }}
                   >
                     <div className="border w-[90px] h-[90px] xl:w-[150px] xl:h-[150px] relative">
                       <Image
@@ -210,17 +292,17 @@ function GraniteComponent() {
                   </div>
                 ))}
                 {pdf ? (
-                  <div className="w-full hidden md:flex relative pt-[40px]">
+                  <div className="w-full flex relative pt-[40px]">
                     <iframe
                       src={`/products/Granite Tile/${selected}/pdf/${pdf}.pdf`}
                       type="application/pdf"
-                      className="w-full h-[450px] sm:h-[900px]"
+                      className="w-full h-[900px] hidden md:flex"
                     ></iframe>
-                    {/* <iframe
-                      src="https://drive.google.com/file/d/183YxWOV-Wrs7Tfs_lcomFPu1hZWzCa4P/preview"
-                      className="w-full h-[450px] sm:h-[900px]"
+                    <iframe
+                      src={googlePdf}
+                      className="w-full h-[500px] md:hidden"
                       allow="autoplay"
-                    ></iframe> */}
+                    ></iframe>
                   </div>
                 ) : null}
               </div>

@@ -22,6 +22,7 @@ const productType2 = [
       "venus",
       "vincenza",
     ],
+    link: ["NIRO", "TITANIUM", "SUMMIT", "VENUS TILES"],
   },
   {
     id: 2,
@@ -35,41 +36,46 @@ const productType2 = [
       "platinum",
       "roman",
     ],
+    link: ["PLATINUM", "ROMAN", "HABITAT", "MILAN"],
   },
   {
     id: 3,
     name: "Sanitary",
     brand: ["american", "cotto", "fliessen", "oulu", "roca", "toto"],
+    link: ["TOTO", "FLIESSEN", "AMERICAN STANDARD", "ROCA"],
   },
   {
     id: 4,
     name: "Door",
     brand: ["angz", "matadoor", "topdoor"],
+    link: ["MATADOOR", "ANGZDOOR", "MATADOOR", "TOP DOOR"],
   },
   {
     id: 5,
     name: "Sink",
     brand: ["fico", "royal"],
+    link: ["FICO", "ROYAL", "FICO", "ROYAL"],
   },
   {
     id: 6,
     name: "Mortar",
     brand: ["am", "mu", "sika"],
+    link: ["AM", "MU", "AM", "SIKA"],
   },
   {
     id: 7,
     name: "Water Appliances",
     brand: ["ariston", "profil", "royal", "solahart", "tirta"],
+    link: ["PROFIL TANK", "ARISTON", "ARISTON", "SOLAHART"],
   },
 ];
 
 function Products() {
   const [selected, setSelected] = useState("Granite Tile");
-  // const useSelected = (type) => {
-  //   setSelected(type);
-  // };
+  const [selectedIndex, setSelectedIndex] = useState("0");
   const selectedLogo = productType2.filter((obj) => obj.name === selected);
   const selectedBrand = selectedLogo.map((obj) => obj.brand);
+  const selectedLink = productType2[selectedIndex].link;
 
   return (
     <div className="flex justify-center w-full mt-[20px] md:mt-20">
@@ -83,10 +89,13 @@ function Products() {
         <div className="hidden md:flex w-full justify-between ">
           <div className="w-1/5">
             <ul className="cursor-pointer flex flex-col gap-[20px]">
-              {productType2.map((obj) => (
+              {productType2.map((obj, index) => (
                 <li
                   key={obj.id}
-                  onClick={() => setSelected(obj.name)}
+                  onClick={() => {
+                    setSelected(obj.name);
+                    setSelectedIndex(index);
+                  }}
                   className={
                     selected === obj.name
                       ? `underline underline-offset-4 drop-shadow-md`
@@ -99,15 +108,20 @@ function Products() {
             </ul>
           </div>
           <div className="w-4/5">
-            <Link
-              href={`/product/${selected.replace(/\s+/g, "-").toLowerCase()}`}
-              passHref
+            <div
+              className="flex items-center justify-center gap-[20px] animate-fadeDown transition-all"
+              key={`${selected}`}
             >
-              <div
-                className="flex items-center justify-center gap-[20px] animate-fadeDown transition-all"
-                key={`${selected}`}
+              <Link
+                href={{
+                  pathname: `/product/${selected
+                    .replace(/\s+/g, "-")
+                    .toLowerCase()}`,
+                  query: { brand: selectedLink[0] },
+                }}
+                passHref
               >
-                <div>
+                <a>
                   <Image
                     className="object-contain cursor-pointer"
                     src={`/products/${selected}/highlight/1.png`}
@@ -115,9 +129,19 @@ function Products() {
                     width={508}
                     height={440}
                   />
-                </div>
-                <div className="flex flex-col gap-[15px]">
-                  <div>
+                </a>
+              </Link>
+              <div className="flex flex-col gap-[15px]">
+                <Link
+                  href={{
+                    pathname: `/product/${selected
+                      .replace(/\s+/g, "-")
+                      .toLowerCase()}`,
+                    query: { brand: selectedLink[1] },
+                  }}
+                  passHref
+                >
+                  <a>
                     <Image
                       className="object-contain cursor-pointer"
                       src={`/products/${selected}/highlight/2.png`}
@@ -125,9 +149,19 @@ function Products() {
                       width={513}
                       height={210}
                     />
-                  </div>
-                  <div className="flex gap-[20px]">
-                    <div>
+                  </a>
+                </Link>
+                <div className="flex gap-[20px]">
+                  <Link
+                    href={{
+                      pathname: `/product/${selected
+                        .replace(/\s+/g, "-")
+                        .toLowerCase()}`,
+                      query: { brand: selectedLink[2] },
+                    }}
+                    passHref
+                  >
+                    <a>
                       <Image
                         className="object-contain cursor-pointer"
                         src={`/products/${selected}/highlight/3.png`}
@@ -135,8 +169,18 @@ function Products() {
                         width={246}
                         height={210}
                       />
-                    </div>
-                    <div>
+                    </a>
+                  </Link>
+                  <Link
+                    href={{
+                      pathname: `/product/${selected
+                        .replace(/\s+/g, "-")
+                        .toLowerCase()}`,
+                      query: { brand: selectedLink[3] },
+                    }}
+                    passHref
+                  >
+                    <a>
                       <Image
                         className="object-contain cursor-pointer "
                         src={`/products/${selected}/highlight/4.png`}
@@ -144,11 +188,11 @@ function Products() {
                         width={246}
                         height={210}
                       />
-                    </div>
-                  </div>
+                    </a>
+                  </Link>
                 </div>
               </div>
-            </Link>
+            </div>
             <div className="flex flex-wrap">
               {selectedBrand[0].map((obj) => (
                 <div
@@ -174,17 +218,17 @@ function Products() {
             </div>
           </div>
         </div>
-        <div className="flex md:hidden px-4">
-          <div className="flex flex-wrap justify-between gap-y-[5px]">
+        <div className="flex md:hidden px-4 bg-blue-50">
+          <div className="flex flex-wrap gap-y-[10px] w-full bg-red-50 justify-between">
             {productType2.map((obj) => (
               <Link
                 key={obj.id}
                 href={`/product/${obj.name.replace(/\s+/g, "-").toLowerCase()}`}
                 passHref
               >
-                <div className="relative w-[160px] sm:w-[230px] h-[100px] sm:h-[140px]">
+                <div className="relative w-[48%] sm:w-[230px] h-[100px] sm:h-[140px]">
                   <Image
-                    className="object-cover cursor-pointer shadow-lg"
+                    className="object-cover cursor-pointer shadow-lg brightness-[.78]"
                     src={`/products/${obj.name}/highlight/1.png`}
                     alt="highlight product 1"
                     layout="fill"

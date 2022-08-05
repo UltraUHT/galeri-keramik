@@ -1,32 +1,48 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 
 const graniteTiles = [
   {
     id: 1,
     name: "AMERICAN STANDARD",
     link: ["AMERICAN STANDARD 2022"],
+    pdf: [
+      "https://drive.google.com/file/d/1YNuonU5hRNiQEcaPm_F2karIWMAYNG2c/preview",
+    ],
   },
   {
     id: 2,
     name: "COTTO",
     link: ["COTTO CATALOGUE"],
+    pdf: [
+      "https://drive.google.com/file/d/10NVybGrzAcjT1clMUlQWpxwhN4UCH0Hb/preview",
+    ],
   },
   {
     id: 3,
     name: "FLIESSEN",
     link: ["fließen BROCHURE 2022"],
+    pdf: [
+      "https://drive.google.com/file/d/15J7KJ36G8658uKgDaWITth9N_PhoQpmr/preview",
+    ],
   },
   {
     id: 4,
     name: "ROCA",
     link: ["ROCA SANITARY"],
+    pdf: [
+      "https://drive.google.com/file/d/1oa1aK4zob_uIse5D7zW4-U2AwpSQrWgw/preview",
+    ],
   },
   {
     id: 5,
     name: "SANDIMAS OULU",
     link: ["Sandimas Oulu Sanitary 2022"],
+    pdf: [
+      "https://drive.google.com/file/d/18LCnmQ-0Ld5VO50RCwdZCriARLYdRR7u/preview",
+    ],
   },
   {
     id: 6,
@@ -35,16 +51,26 @@ const graniteTiles = [
       "TOTO Fitting Catalog February 2022",
       "TOTO Sanitary Catalog February 2022",
     ],
+    pdf: [
+      "https://drive.google.com/file/d/1uly-ANfEsFSPXr9zA5I_Slf1T9l2-EmE/preview",
+      "https://drive.google.com/file/d/13PUc8yjKnQut1Pd7JBJ2LYHTGYBmO9z3/preview",
+    ],
   },
 ];
 
 function SanitaryComponent() {
-  const [selected, setSelected] = useState("AMERICAN STANDARD");
+  const router = useRouter();
+  const query = router.query;
+  const selectedBrand = query.brand || "AMERICAN STANDARD";
+  const [selected, setSelected] = useState(selectedBrand);
+  const [selectedIndex, setSelectedIndex] = useState("0");
 
   const selectedLogo = graniteTiles.filter((obj) => obj.name === selected);
   const pdfList = selectedLogo.map((obj) => obj.link);
 
   const [pdf, setPdf] = useState("");
+  const [pdfLink, setPdfLink] = useState("");
+  const googlePdf = graniteTiles[selectedIndex].pdf[pdfLink];
 
   return (
     <div className="flex justify-center w-full pt-[20px]">
@@ -75,34 +101,52 @@ function SanitaryComponent() {
         <div className="flex flex-col lg:flex-row w-full justify-between ">
           <div className="lg:w-1/5 w-full">
             <ul className="cursor-pointer hidden lg:flex flex-col gap-[20px]">
-              {graniteTiles.map((obj) => (
-                <li
+              {graniteTiles.map((obj, index) => (
+                <Link
                   key={obj.id}
-                  onClick={() => {
-                    setSelected(obj.name);
-                    setPdf("");
+                  href={{
+                    query: { brand: obj.name },
                   }}
-                  className={
-                    selected === obj.name
-                      ? `font-bold underline underline-offset-4 drop-shadow-md`
-                      : null
-                  }
+                  passHref
                 >
-                  {obj.name}
-                </li>
+                  <a>
+                    <li
+                      onClick={() => {
+                        setSelected(obj.name);
+                        setSelectedIndex(index);
+                        setPdf("");
+                      }}
+                      className={
+                        selected === obj.name
+                          ? `font-bold underline underline-offset-4 drop-shadow-md`
+                          : null
+                      }
+                    >
+                      {obj.name}
+                    </li>
+                  </a>
+                </Link>
               ))}
             </ul>
             <select
               className="w-full flex lg:hidden bg-white drop-shadow-sm border mb-[20px]"
               onChange={(e) => {
-                setSelected(e.target.value);
+                setSelected(e.target.value.replace(/[0-9]/g, ""));
+                setSelectedIndex(e.target.value.replace(/\D/g, ""));
                 setPdf("");
               }}
             >
-              {graniteTiles.map((obj) => (
-                <option key={obj.id} value={obj.name}>
-                  {obj.name}
-                </option>
+              {graniteTiles.map((obj, index) => (
+                <Link
+                  href={{
+                    query: { brand: obj.name },
+                  }}
+                  passHref
+                >
+                  <option key={obj.id} value={obj.name + index}>
+                    {obj.name}
+                  </option>
+                </Link>
               ))}
             </select>
           </div>
@@ -289,11 +333,14 @@ function SanitaryComponent() {
               <h2>Read Our Catalog</h2>
 
               <div className="pt-[20px] flex flex-wrap gap-[20px]">
-                {pdfList[0].map((obj) => (
+                {pdfList[0].map((obj, index) => (
                   <div
                     key={obj}
                     className="flex flex-col items-center gap-[8px] w-[180px]"
-                    onClick={() => setPdf(obj)}
+                    onClick={() => {
+                      setPdf(obj);
+                      setPdfLink(index);
+                    }}
                   >
                     <div className="border w-[90px] h-[90px] xl:w-[150px] xl:h-[150px] relative">
                       <Image
@@ -307,11 +354,16 @@ function SanitaryComponent() {
                   </div>
                 ))}
                 {pdf ? (
-                  <div className="w-full hidden md:flex relative pt-[40px]">
+                  <div className="w-full flex relative pt-[40px]">
                     <iframe
                       src={`/products/Sanitary/${selected}/pdf/${pdf}.pdf`}
                       type="application/pdf"
-                      className="w-full h-[450px] sm:h-[900px]"
+                      className="w-full h-[900px] hidden md:flex"
+                    ></iframe>
+                    <iframe
+                      src={googlePdf}
+                      className="w-full h-[500px] md:hidden"
+                      allow="autoplay"
                     ></iframe>
                   </div>
                 ) : null}

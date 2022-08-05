@@ -1,37 +1,56 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 
 const graniteTiles = [
   {
     id: 1,
     name: "HABITAT",
     link: ["HABITAT 2022"],
+    pdf: [
+      "https://drive.google.com/file/d/183YxWOV-Wrs7Tfs_lcomFPu1hZWzCa4P/preview",
+    ],
   },
   {
     id: 2,
     name: "HERKULES",
     link: ["HERKULES"],
+    pdf: [
+      "https://drive.google.com/file/d/1TPyDt-adADyAXAXBppqpQCd5J_sbYSD-/preview",
+    ],
   },
   {
     id: 3,
     name: "IKAD",
     link: ["Catalog IKAD"],
+    pdf: [
+      "https://drive.google.com/file/d/13OfNB7q8b6KgpKCjbNTb1kixRagF2s4V/preview",
+    ],
   },
   {
     id: 4,
     name: "JUPITER",
     link: ["JUPITER 2021"],
+    pdf: [
+      "https://drive.google.com/file/d/123F_CqCBP8s3OQKEuHWZPsYiUN69JfT5/preview",
+    ],
   },
   {
     id: 5,
     name: "MILAN",
     link: ["MILAN 2022"],
+    pdf: [
+      "https://drive.google.com/file/d/1_oS6ZvrsPt-lV5R5hQ3hPUv2PRinNgw-/preview",
+    ],
   },
   {
     id: 6,
     name: "PLATINUM",
     link: ["PLATINUM CERAMIC 2022"],
+    pdf: [
+      "https://drive.google.com/file/d/1cCs44Z8qQ_0t4qIsaNgV6Zgo8s2_4oHE/preview",
+    ],
   },
   {
     id: 7,
@@ -39,20 +58,33 @@ const graniteTiles = [
     link: [
       "Roman Floor Tile 050422",
       "Roman Interlok 050422",
-      "Roman Interlok 050422",
+      "Roman Interlok Hexagonal 050422",
       "Roman Rectificado 050422",
       "Roman Wall Tile 050422",
+    ],
+    pdf: [
+      "https://drive.google.com/file/d/1kgkhal1JKTDdugMMLh4_oIOvM7w7CvGg/preview",
+      "https://drive.google.com/file/d/1q7iYLM-MAIr1aEV557mR5hKU59VWKntR/preview",
+      "https://drive.google.com/file/d/1lMttpDQYEy7bR1obsYLeI-gTgCjwVBBn/preview",
+      "https://drive.google.com/file/d/1-DQOsrvkUOx4EgdExOWbPWrX9GzXltix/preview",
+      "https://drive.google.com/file/d/1gvgXP3DzQ4m3ZFr3kkAZqxpPrPiD4yny/preview",
     ],
   },
 ];
 
 function CeramicComponent() {
-  const [selected, setSelected] = useState("HABITAT");
+  const router = useRouter();
+  const query = router.query;
+  const selectedBrand = query.brand || "HABITAT";
+  const [selected, setSelected] = useState(selectedBrand);
+  const [selectedIndex, setSelectedIndex] = useState("0");
 
   const selectedLogo = graniteTiles.filter((obj) => obj.name === selected);
   const pdfList = selectedLogo.map((obj) => obj.link);
 
   const [pdf, setPdf] = useState("");
+  const [pdfLink, setPdfLink] = useState("");
+  const googlePdf = graniteTiles[selectedIndex].pdf[pdfLink];
 
   return (
     <div className="flex justify-center w-full pt-[20px]">
@@ -83,35 +115,54 @@ function CeramicComponent() {
         <div className="flex flex-col lg:flex-row w-full justify-between ">
           <div className="lg:w-1/5 w-full">
             <ul className="cursor-pointer hidden lg:flex flex-col gap-[20px]">
-              {graniteTiles.map((obj) => (
-                <li
+              {graniteTiles.map((obj, index) => (
+                <Link
                   key={obj.id}
-                  // onClick={() => useSelected(obj.name)}
-                  onClick={() => {
-                    setSelected(obj.name);
-                    setPdf("");
+                  href={{
+                    query: { brand: obj.name },
                   }}
-                  className={
-                    selected === obj.name
-                      ? `font-bold underline underline-offset-4 drop-shadow-md`
-                      : null
-                  }
+                  passHref
                 >
-                  {obj.name}
-                </li>
+                  <a>
+                    <li
+                      key={obj.id}
+                      onClick={() => {
+                        setSelected(obj.name);
+                        setSelectedIndex(index);
+                        setPdf("");
+                      }}
+                      className={
+                        selected === obj.name
+                          ? `font-bold underline underline-offset-4 drop-shadow-md`
+                          : null
+                      }
+                    >
+                      {obj.name}
+                    </li>
+                  </a>
+                </Link>
               ))}
             </ul>
             <select
               className="w-full flex lg:hidden bg-white drop-shadow-sm border mb-[20px]"
               onChange={(e) => {
-                setSelected(e.target.value);
+                setSelected(e.target.value.replace(/[0-9]/g, ""));
+                setSelectedIndex(e.target.value.replace(/\D/g, ""));
                 setPdf("");
               }}
             >
-              {graniteTiles.map((obj) => (
-                <option key={obj.id} value={obj.name}>
-                  {obj.name}
-                </option>
+              {graniteTiles.map((obj, index) => (
+                <Link
+                  key={obj.id}
+                  href={{
+                    query: { brand: obj.name },
+                  }}
+                  passHref
+                >
+                  <option key={obj.id} value={obj.name + index}>
+                    {obj.name}
+                  </option>
+                </Link>
               ))}
             </select>
           </div>
@@ -139,11 +190,14 @@ function CeramicComponent() {
               <h2>Read Our Catalog</h2>
 
               <div className="pt-[20px] flex flex-wrap gap-[20px]">
-                {pdfList[0].map((obj) => (
+                {pdfList[0].map((obj, index) => (
                   <div
                     key={obj}
                     className="flex flex-col items-center gap-[8px] w-[180px]"
-                    onClick={() => setPdf(obj)}
+                    onClick={() => {
+                      setPdf(obj);
+                      setPdfLink(index);
+                    }}
                   >
                     <div className="border w-[90px] h-[90px] xl:w-[150px] xl:h-[150px] relative">
                       <Image
@@ -157,11 +211,16 @@ function CeramicComponent() {
                   </div>
                 ))}
                 {pdf ? (
-                  <div className="w-full hidden md:flex relative pt-[40px]">
+                  <div className="w-full flex relative pt-[40px]">
                     <iframe
                       src={`/products/Ceramic/${selected}/pdf/${pdf}.pdf`}
                       type="application/pdf"
-                      className="w-full h-[450px] sm:h-[900px]"
+                      className="w-full h-[900px] hidden md:flex"
+                    ></iframe>
+                    <iframe
+                      src={googlePdf}
+                      className="w-full h-[500px] md:hidden"
+                      allow="autoplay"
                     ></iframe>
                   </div>
                 ) : null}

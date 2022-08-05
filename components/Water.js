@@ -1,36 +1,57 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 
 const graniteTiles = [
   {
     id: 1,
     name: "ARISTON",
     link: ["Catalogue Ariston 2022 -1-18"],
+    pdf: [
+      "https://drive.google.com/file/d/1typcxTv5UzSdX-h8ozRj3T2nDdzU5cqa/preview",
+    ],
   },
   {
     id: 2,
     name: "PROFIL TANK",
     link: ["ProfilTank Brosur"],
+    pdf: [
+      "https://drive.google.com/file/d/1dwd9nysWKr_ckIH2UUV_H70AH9hrVuVo/preview",
+    ],
   },
   {
     id: 3,
     name: "SOLAHART",
     link: ["Brosur Solahart SL Series A5", "Brosur Sole A4"],
+    pdf: [
+      "https://drive.google.com/file/d/1-VdAaKj-mr0jjz4K5oxizw2P2-kCdUch/preview",
+      "https://drive.google.com/file/d/1fKXzTYynI36BLNy4WpBQ4dMIVyxqC37L/preview",
+    ],
   },
   {
     id: 4,
     name: "TIRTA TANK",
     link: ["TIRTA WATER TANK"],
+    pdf: [
+      "https://drive.google.com/file/d/1q5ptaiWigA51CS9n8jWUQwNtwzyYhiYv/preview",
+    ],
   },
 ];
 
 function WaterComponent() {
-  const [selected, setSelected] = useState("ARISTON");
+  const router = useRouter();
+  const query = router.query;
+  const selectedBrand = query.brand || "ARISTON";
+  const [selected, setSelected] = useState(selectedBrand);
+  const [selectedIndex, setSelectedIndex] = useState("0");
 
   const selectedLogo = graniteTiles.filter((obj) => obj.name === selected);
   const pdfList = selectedLogo.map((obj) => obj.link);
+
   const [pdf, setPdf] = useState("");
+  const [pdfLink, setPdfLink] = useState("");
+  const googlePdf = graniteTiles[selectedIndex].pdf[pdfLink];
 
   return (
     <div className="flex justify-center w-full pt-[20px]">
@@ -61,34 +82,52 @@ function WaterComponent() {
         <div className="flex flex-col lg:flex-row w-full justify-between ">
           <div className="lg:w-1/5 w-full">
             <ul className="cursor-pointer hidden lg:flex flex-col gap-[20px]">
-              {graniteTiles.map((obj) => (
-                <li
+              {graniteTiles.map((obj, index) => (
+                <Link
                   key={obj.id}
-                  onClick={() => {
-                    setSelected(obj.name);
-                    setPdf("");
+                  href={{
+                    query: { brand: obj.name },
                   }}
-                  className={
-                    selected === obj.name
-                      ? `font-bold underline underline-offset-4 drop-shadow-md`
-                      : null
-                  }
+                  passHref
                 >
-                  {obj.name}
-                </li>
+                  <a>
+                    <li
+                      onClick={() => {
+                        setSelected(obj.name);
+                        setSelectedIndex(index);
+                        setPdf("");
+                      }}
+                      className={
+                        selected === obj.name
+                          ? `font-bold underline underline-offset-4 drop-shadow-md`
+                          : null
+                      }
+                    >
+                      {obj.name}
+                    </li>
+                  </a>
+                </Link>
               ))}
             </ul>
             <select
               className="w-full flex lg:hidden bg-white drop-shadow-sm border mb-[20px]"
               onChange={(e) => {
-                setSelected(e.target.value);
+                setSelected(e.target.value.replace(/[0-9]/g, ""));
+                setSelectedIndex(e.target.value.replace(/\D/g, ""));
                 setPdf("");
               }}
             >
-              {graniteTiles.map((obj) => (
-                <option key={obj.id} value={obj.name}>
-                  {obj.name}
-                </option>
+              {graniteTiles.map((obj, index) => (
+                <Link
+                  href={{
+                    query: { brand: obj.name },
+                  }}
+                  passHref
+                >
+                  <option key={obj.id} value={obj.name + index}>
+                    {obj.name}
+                  </option>
+                </Link>
               ))}
             </select>
           </div>
@@ -158,7 +197,7 @@ function WaterComponent() {
                     className="flex flex-col items-center gap-[8px] w-[180px]"
                     onClick={() => {
                       setPdf(obj);
-                      console.log("index pdf", index, obj);
+                      setPdfLink(index);
                     }}
                   >
                     <div className="border w-[90px] h-[90px] xl:w-[150px] xl:h-[150px] relative">
@@ -173,11 +212,16 @@ function WaterComponent() {
                   </div>
                 ))}
                 {pdf ? (
-                  <div className="w-full hidden md:flex relative pt-[40px]">
+                  <div className="w-full flex relative pt-[40px]">
                     <iframe
                       src={`/products/Water Appliances/${selected}/pdf/${pdf}.pdf`}
                       type="application/pdf"
-                      className="w-full h-[450px] sm:h-[900px]"
+                      className="w-full h-[900px] hidden md:flex"
+                    ></iframe>
+                    <iframe
+                      src={googlePdf}
+                      className="w-full h-[500px] md:hidden"
+                      allow="autoplay"
                     ></iframe>
                   </div>
                 ) : null}

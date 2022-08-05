@@ -1,32 +1,48 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 
 const graniteTiles = [
   {
     id: 1,
     name: "AM",
     link: ["AM Katalog Produk_2021"],
+    pdf: [
+      "https://drive.google.com/file/d/12ajy-IeLUbdH6_kD-CzqU7yYbXwUx_Z2/preview",
+    ],
   },
   {
     id: 2,
     name: "MU",
     link: ["Retail Catalog - New 2022"],
+    pdf: [
+      "https://drive.google.com/file/d/13FGRoC2Wp3SZ3Kz2dUBgDaTQ3H1zbxr9/preview",
+    ],
   },
   {
     id: 3,
     name: "SIKA",
     link: ["SIKA PRODUCT CATALOGUE"],
+    pdf: [
+      "https://drive.google.com/file/d/12ZjVKiTn5SimIsWtGloF_iwRizrj4ScO/preview",
+    ],
   },
 ];
 
 function MortarComponent() {
-  const [selected, setSelected] = useState("AM");
+  const router = useRouter();
+  const query = router.query;
+  const selectedBrand = query.brand || "AM";
+  const [selected, setSelected] = useState(selectedBrand);
+  const [selectedIndex, setSelectedIndex] = useState("0");
 
   const selectedLogo = graniteTiles.filter((obj) => obj.name === selected);
   const pdfList = selectedLogo.map((obj) => obj.link);
 
   const [pdf, setPdf] = useState("");
+  const [pdfLink, setPdfLink] = useState("");
+  const googlePdf = graniteTiles[selectedIndex].pdf[pdfLink];
 
   return (
     <div className="flex justify-center w-full pt-[20px]">
@@ -57,34 +73,53 @@ function MortarComponent() {
         <div className="flex flex-col lg:flex-row w-full justify-between ">
           <div className="lg:w-1/5 w-full">
             <ul className="cursor-pointer hidden lg:flex flex-col gap-[20px]">
-              {graniteTiles.map((obj) => (
-                <li
+              {graniteTiles.map((obj, index) => (
+                <Link
                   key={obj.id}
-                  onClick={() => {
-                    setSelected(obj.name);
-                    setPdf("");
+                  href={{
+                    query: { brand: obj.name },
                   }}
-                  className={
-                    selected === obj.name
-                      ? `font-bold underline underline-offset-4 drop-shadow-md`
-                      : null
-                  }
+                  passHref
                 >
-                  {obj.name}
-                </li>
+                  <a>
+                    <li
+                      key={obj.id}
+                      onClick={() => {
+                        setSelected(obj.name);
+                        setSelectedIndex(index);
+                        setPdf("");
+                      }}
+                      className={
+                        selected === obj.name
+                          ? `font-bold underline underline-offset-4 drop-shadow-md`
+                          : null
+                      }
+                    >
+                      {obj.name}
+                    </li>
+                  </a>
+                </Link>
               ))}
             </ul>
             <select
               className="w-full flex lg:hidden bg-white drop-shadow-sm border mb-[20px]"
               onChange={(e) => {
-                setSelected(e.target.value);
+                setSelected(e.target.value.replace(/[0-9]/g, ""));
+                setSelectedIndex(e.target.value.replace(/\D/g, ""));
                 setPdf("");
               }}
             >
-              {graniteTiles.map((obj) => (
-                <option key={obj.id} value={obj.name}>
-                  {obj.name}
-                </option>
+              {graniteTiles.map((obj, index) => (
+                <Link
+                  href={{
+                    query: { brand: obj.name },
+                  }}
+                  passHref
+                >
+                  <option key={obj.id} value={obj.name + index}>
+                    {obj.name}
+                  </option>
+                </Link>
               ))}
             </select>
           </div>
@@ -122,18 +157,28 @@ function MortarComponent() {
                 </p>
               ) : null}
               {selected === "SIKA" ? (
-                <p className="pt-[25px]">SIKA merupakan salah satu produsen</p>
+                <p className="pt-[25px]">
+                  SIKA merupakan salah satu produsen semen instan terbesar di
+                  Indonesia.
+                  <br />
+                  <br />
+                  Berikut ini merupakan ecatalogue SIKA. Hubungi kami untuk
+                  informasi lebih lanjut.
+                </p>
               ) : null}
             </div>
-            <div className="pt-[40px]">
+            <div className="py-[40px] xl:pb-0">
               <h2>Read Our Catalog</h2>
 
               <div className="pt-[20px] flex flex-wrap gap-[20px]">
-                {pdfList[0].map((obj) => (
+                {pdfList[0].map((obj, index) => (
                   <div
                     key={obj}
                     className="flex flex-col items-center gap-[8px] w-[180px]"
-                    onClick={() => setPdf(obj)}
+                    onClick={() => {
+                      setPdf(obj);
+                      setPdfLink(index);
+                    }}
                   >
                     <div className="border w-[90px] h-[90px] xl:w-[150px] xl:h-[150px] relative">
                       <Image
@@ -147,11 +192,16 @@ function MortarComponent() {
                   </div>
                 ))}
                 {pdf ? (
-                  <div className="w-full relative pt-[40px]">
+                  <div className="w-full flex relative pt-[40px]">
                     <iframe
                       src={`/products/Mortar/${selected}/pdf/${pdf}.pdf`}
                       type="application/pdf"
-                      className="w-fullh-[450px] sm:h-[900px]"
+                      className="w-full h-[900px] hidden md:flex"
+                    ></iframe>
+                    <iframe
+                      src={googlePdf}
+                      className="w-full h-[500px] md:hidden"
+                      allow="autoplay"
                     ></iframe>
                   </div>
                 ) : null}
