@@ -138,6 +138,7 @@ function WaterComponent() {
             </select>
           </div>
           <div className="lg:w-4/5">
+            {brand}
             <div className="w-full h-[165px] border sm:h-[240px] md:h-[320px] lg:h-[350px] xl:h-[400px] 2xl:h-[514px] relative">
               {brand === "ARISTON" ? (
                 <Image
