@@ -174,7 +174,7 @@ function MortarComponent() {
                 {pdfList[0].map((obj, index) => (
                   <div
                     key={obj}
-                    className="flex flex-col items-center gap-[8px] w-[180px]"
+                    className="flex flex-col items-center gap-[8px] w-[120px] md:w-[180px] flex-wrap"
                     onClick={() => {
                       setPdf(obj);
                       setPdfLink(index);
