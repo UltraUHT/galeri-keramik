@@ -158,11 +158,11 @@ function MortarComponent() {
                 ))}
                 {pdf ? (
                   <div className="w-full relative pt-[40px]">
-                    <object
-                      data={`/products/Mortar/${selected}/pdf/${pdf}.pdf`}
+                    <iframe
+                      src={`/products/Mortar/${selected}/pdf/${pdf}.pdf`}
                       type="application/pdf"
                       className="w-fullh-[450px] sm:h-[900px]"
-                    ></object>
+                    ></iframe>
                   </div>
                 ) : null}
               </div>

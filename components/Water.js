@@ -182,11 +182,11 @@ function WaterComponent() {
                 ))}
                 {pdf ? (
                   <div className="w-full relative pt-[40px]">
-                    <object
-                      data={`/products/Water Appliances/${selected}/pdf/${pdf}.pdf`}
+                    <iframe
+                      src={`/products/Water Appliances/${selected}/pdf/${pdf}.pdf`}
                       type="application/pdf"
                       className="w-full h-[450px] sm:h-[900px]"
-                    ></object>
+                    ></iframe>
                   </div>
                 ) : null}
               </div>
