@@ -257,7 +257,7 @@ function GraniteComponent() {
               <Image
                 key={router.asPath}
                 className="object-contain cursor-pointer"
-                src={`/products/Granite Tile/${brand}/highlight/1.png`}
+                src={`/products/Granite Tile/${query.brand}/highlight/1.png`}
                 alt="highlight product 1"
                 layout="fill"
               />
