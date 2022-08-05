@@ -218,8 +218,8 @@ function Products() {
             </div>
           </div>
         </div>
-        <div className="flex md:hidden px-4 bg-blue-50">
-          <div className="flex flex-wrap gap-y-[10px] w-full bg-red-50 justify-between">
+        <div className="flex md:hidden px-4">
+          <div className="flex flex-wrap gap-y-[10px] w-full justify-between">
             {productType2.map((obj) => (
               <Link
                 key={obj.id}
