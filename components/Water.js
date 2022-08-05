@@ -52,6 +52,7 @@ function WaterComponent() {
   const [pdf, setPdf] = useState("");
   const [pdfLink, setPdfLink] = useState("");
   const googlePdf = selectedLogo[0].pdf[pdfLink];
+  console.log(brand);
 
   return (
     <div className="flex justify-center w-full pt-[20px]">
