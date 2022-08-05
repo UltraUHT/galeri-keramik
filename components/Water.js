@@ -42,7 +42,7 @@ const graniteTiles = [
 function WaterComponent() {
   const router = useRouter();
   const query = router.query;
-  const brand = query.brand || "ARISTON";
+  const brand = query.brand;
   const [selected, setSelected] = useState(brand);
   const [selectedIndex, setSelectedIndex] = useState("0");
 
@@ -112,7 +112,7 @@ function WaterComponent() {
               ))}
             </ul>
             <select
-              className="w-full flex lg:hidden bg-white drop-shadow-sm border mb-[20px]"
+              className="w-full flex lg:hidden bg-white drop-shadow-sm border mb-[20px] py-2"
               onChange={(e) => {
                 setSelected(e.target.value.replace(/[0-9]/g, ""));
                 setSelectedIndex(e.target.value.replace(/\D/g, ""));
