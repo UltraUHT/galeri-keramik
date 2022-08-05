@@ -50,7 +50,7 @@ function CeramicComponent() {
   const [selected, setSelected] = useState("HABITAT");
   const useSelected = (type) => {
     setSelected(type);
-    setPdf();
+    setPdf("");
   };
   const selectedLogo = graniteTiles.filter((obj) => obj.name === selected);
   const pdfList = selectedLogo.map((obj) => obj.link);
@@ -58,7 +58,6 @@ function CeramicComponent() {
   const [pdf, setPdf] = useState("");
   const usePdf = (t) => {
     setPdf(t);
-    console.log(pdf);
   };
 
   return (

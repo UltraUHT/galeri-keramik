@@ -24,7 +24,7 @@ function MortarComponent() {
   const [selected, setSelected] = useState("AM");
   const useSelected = (type) => {
     setSelected(type);
-    setPdf();
+    setPdf("");
   };
   const selectedLogo = graniteTiles.filter((obj) => obj.name === selected);
   const pdfList = selectedLogo.map((obj) => obj.link);
@@ -32,7 +32,6 @@ function MortarComponent() {
   const [pdf, setPdf] = useState("");
   const usePdf = (t) => {
     setPdf(t);
-    console.log(pdf);
   };
 
   return (
