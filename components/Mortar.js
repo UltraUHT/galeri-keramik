@@ -106,21 +106,17 @@ function MortarComponent() {
               onChange={(e) => {
                 setSelected(e.target.value.replace(/[0-9]/g, ""));
                 setSelectedIndex(e.target.value.replace(/\D/g, ""));
+                router.push({
+                  pathname: "/product/mortar/",
+                  query: { brand: e.target.value.replace(/[0-9]/g, "") },
+                });
                 setPdf("");
               }}
             >
               {graniteTiles.map((obj, index) => (
-                <Link
-                  key={obj.id}
-                  href={{
-                    query: { brand: obj.name },
-                  }}
-                  passHref
-                >
-                  <option key={obj.id} value={obj.name + index}>
-                    {obj.name}
-                  </option>
-                </Link>
+                <option key={obj.id} value={obj.name + index}>
+                  {obj.name}
+                </option>
               ))}
             </select>
           </div>
