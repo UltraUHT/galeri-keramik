@@ -35,13 +35,21 @@ const imageLink = [
   },
 ];
 
+const smallIco = ["PLATINUM", "TOTO", "MATADOOR", "FICO", "AM", "PROFIL TANK"];
+
 function ProductLink() {
   return (
     <div className="flex justify-center w-full py-[20px]">
       <div className="flex flex-col gap-[20px] justify-between items-center w-full max-w-[500px] md:max-w-[640px] lg:max-w-[840px] xl:max-w-[980px] 2xl:max-w-[1280px]">
         <h2 className="text-center md:text-left w-full">Our Products</h2>
         <div className="w-full flex flex-col animate-fadeDown">
-          <Link href="/product/granite-tile" passHref>
+          <Link
+            href={{
+              pathname: "/product/granite-tile",
+              query: { brand: "NIRO" },
+            }}
+            passHref
+          >
             <a className="w-full h-[150px] md:h-[220px] lg:h-[225px] xl:h-[350px] 2xl:w-[1280px] 2xl:h-[470px] relative drop-shadow-xl group overflow-hidden">
               <Image
                 className="object-cover cursor-pointer z-0 md:group-hover:blur-sm"
@@ -60,8 +68,15 @@ function ProductLink() {
             </a>
           </Link>
           <div className="w-full flex flex-wrap gap-x-[10px] gap-y-[20px] justify-between pt-[20px]">
-            {imageLink.map((obj) => (
-              <Link key={obj.id} href={obj.link} passHref>
+            {imageLink.map((obj, index) => (
+              <Link
+                key={obj.id}
+                href={{
+                  pathname: `${obj.link}`,
+                  query: { brand: smallIco[index] },
+                }}
+                passHref
+              >
                 <a className="w-full h-[150px] md:h-[220px] xl:w-[480px] 2xl:w-[628px] lg:h-[225px] relative drop-shadow-xl group overflow-hidden">
                   <Image
                     className="object-cover cursor-pointer z-0 md:group-hover:blur-sm"

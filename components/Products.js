@@ -70,6 +70,16 @@ const productType2 = [
   },
 ];
 
+const smallIco = [
+  "NIRO",
+  "PLATINUM",
+  "TOTO",
+  "MATADOOR",
+  "FICO",
+  "AM",
+  "PROFIL TANK",
+];
+
 function Products() {
   const [selected, setSelected] = useState("Granite Tile");
   const [selectedIndex, setSelectedIndex] = useState("0");
@@ -220,10 +230,15 @@ function Products() {
         </div>
         <div className="flex md:hidden px-4">
           <div className="flex flex-wrap gap-y-[10px] w-full justify-between">
-            {productType2.map((obj) => (
+            {productType2.map((obj, index) => (
               <Link
                 key={obj.id}
-                href={`/product/${obj.name.replace(/\s+/g, "-").toLowerCase()}`}
+                href={{
+                  pathname: `/product/${obj.name
+                    .replace(/\s+/g, "-")
+                    .toLowerCase()}`,
+                  query: { brand: smallIco[index] },
+                }}
                 passHref
               >
                 <div className="relative w-[48%] sm:w-[230px] h-[100px] sm:h-[140px]">
