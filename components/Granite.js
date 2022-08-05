@@ -220,7 +220,7 @@ function GraniteComponent() {
                 {pdf ? (
                   <div className="w-full relative pt-[40px]">
                     <iframe
-                      src={`/products/Granite Tile/${selected}/pdf/${pdf}.pdf`}
+                      src={`https://docs.google.com/viewerng/viewer?url=https://galeri-keramik.vercel.app/products/Granite Tile/${selected}/pdf/${pdf}.pdf`}
                       type="application/pdf"
                       className="w-full h-[450px] sm:h-[900px]"
                     ></iframe>
