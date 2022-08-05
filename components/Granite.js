@@ -159,7 +159,7 @@ const mainImage = (props) => {
   return (
     <Image
       className="object-contain cursor-pointer"
-      src={`/products/Water Appliances/${props}/highlight/1.png`}
+      src={`/products/Granite Tile/${props}/highlight/1.png`}
       alt="highlight product 1"
       layout="fill"
     />
@@ -237,7 +237,7 @@ function GraniteComponent() {
               ))}
             </ul>
             <select
-              className="w-full flex lg:hidden bg-white drop-shadow-sm border mb-[20px]"
+              className="w-full flex lg:hidden bg-white drop-shadow-sm border mb-[20px] py-2"
               onChange={(e) => {
                 setSelected(e.target.value.replace(/[0-9]/g, ""));
                 setSelectedIndex(e.target.value.replace(/\D/g, ""));
