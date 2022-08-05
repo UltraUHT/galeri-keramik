@@ -70,7 +70,7 @@ function Products() {
   // };
   const selectedLogo = productType2.filter((obj) => obj.name === selected);
   const selectedBrand = selectedLogo.map((obj) => obj.brand);
-  const linkTo = selected.replace(/\s+/g, "-").toLowerCase();
+
   return (
     <div className="flex justify-center w-full mt-[20px] md:mt-20">
       <div className="flex w-full flex-col gap-[10px] md:gap-[40px] max-w-[500px] md:max-w-[640px] lg:max-w-[840px]  xl:max-w-[980px] 2xl:max-w-[1280px] border-t pt-[10px] md:pt-[20px]">
@@ -99,7 +99,10 @@ function Products() {
             </ul>
           </div>
           <div className="w-4/5">
-            <Link href={`/product/${linkTo}`} passHref>
+            <Link
+              href={`/product/${selected.replace(/\s+/g, "-").toLowerCase()}`}
+              passHref
+            >
               <div
                 className="flex items-center justify-center gap-[20px] animate-fadeDown transition-all"
                 key={`${selected}`}
@@ -174,7 +177,11 @@ function Products() {
         <div className="flex md:hidden px-4">
           <div className="flex flex-wrap justify-between gap-y-[5px]">
             {productType2.map((obj) => (
-              <Link key={obj.id} href={`/product/${linkTo}`} passHref>
+              <Link
+                key={obj.id}
+                href={`/product/${obj.name.replace(/\s+/g, "-").toLowerCase()}`}
+                passHref
+              >
                 <div className="relative w-[160px] sm:w-[230px] h-[100px] sm:h-[140px]">
                   <Image
                     className="object-cover cursor-pointer shadow-lg"

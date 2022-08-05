@@ -17,17 +17,11 @@ const graniteTiles = [
 
 function SinkComponent() {
   const [selected, setSelected] = useState("FICO");
-  // const useSelected = (type) => {
-  //   setSelected(type);
-  //   setPdf("");
-  // };
+
   const selectedLogo = graniteTiles.filter((obj) => obj.name === selected);
   const pdfList = selectedLogo.map((obj) => obj.link);
 
   const [pdf, setPdf] = useState("");
-  // const usePdf = (t) => {
-  //   setPdf(t);
-  // };
 
   return (
     <div className="flex justify-center w-full pt-[20px]">
@@ -61,7 +55,6 @@ function SinkComponent() {
               {graniteTiles.map((obj) => (
                 <li
                   key={obj.id}
-                  //onClick={() => useSelected(obj.name)}
                   onClick={() => {
                     setSelected(obj.name);
                     setPdf("");
@@ -76,17 +69,15 @@ function SinkComponent() {
                 </li>
               ))}
             </ul>
-            <select className="w-full flex lg:hidden bg-white drop-shadow-sm border mb-[20px]">
+            <select
+              className="w-full flex lg:hidden bg-white drop-shadow-sm border mb-[20px]"
+              onChange={(e) => {
+                setSelected(e.target.value);
+                setPdf("");
+              }}
+            >
               {graniteTiles.map((obj) => (
-                <option
-                  key={obj.id}
-                  //onClick={() => useSelected(obj.name)}
-                  onClick={() => {
-                    setSelected(obj.name);
-                    setPdf("");
-                  }}
-                  value={obj.name}
-                >
+                <option key={obj.id} value={obj.name}>
                   {obj.name}
                 </option>
               ))}
@@ -110,7 +101,6 @@ function SinkComponent() {
                   <div
                     key={obj}
                     className="flex flex-col items-center gap-[8px] w-[180px]"
-                    //onClick={() => usePdf(obj)}
                     onClick={() => setPdf(obj)}
                   >
                     <div className="border w-[90px] h-[90px] xl:w-[150px] xl:h-[150px] relative">
@@ -125,7 +115,7 @@ function SinkComponent() {
                   </div>
                 ))}
                 {pdf ? (
-                  <div className="w-full relative pt-[40px]">
+                  <div className="w-full hidden md:flex relative pt-[40px]">
                     <iframe
                       src={`/products/Sink/${selected}/pdf/${pdf}.pdf`}
                       type="application/pdf"

@@ -99,17 +99,11 @@ const graniteTiles = [
 
 function GraniteComponent() {
   const [selected, setSelected] = useState("EFATA");
-  // const useSelected = (type) => {
-  //   setSelected(type);
-  //   setPdf("");
-  // };
+
   const selectedLogo = graniteTiles.filter((obj) => obj.name === selected);
   const pdfList = selectedLogo.map((obj) => obj.link);
 
   const [pdf, setPdf] = useState("");
-  // const usePdf = (t) => {
-  //   setPdf(t);
-  // };
 
   return (
     <div className="flex justify-center w-full pt-[20px]">
@@ -158,17 +152,15 @@ function GraniteComponent() {
                 </li>
               ))}
             </ul>
-            <select className="w-full flex lg:hidden bg-white drop-shadow-sm border mb-[20px]">
+            <select
+              className="w-full flex lg:hidden bg-white drop-shadow-sm border mb-[20px]"
+              onChange={(e) => {
+                setSelected(e.target.value);
+                setPdf("");
+              }}
+            >
               {graniteTiles.map((obj) => (
-                <option
-                  key={obj.id}
-                  // onClick={() => useSelected(obj.name)}
-                  onClick={() => {
-                    setSelected(obj.name);
-                    setPdf("");
-                  }}
-                  value={obj.name}
-                >
+                <option key={obj.id} value={obj.name}>
                   {obj.name}
                 </option>
               ))}
@@ -218,18 +210,17 @@ function GraniteComponent() {
                   </div>
                 ))}
                 {pdf ? (
-                  <div className="w-full relative pt-[40px]">
-                    {/* <iframe
+                  <div className="w-full hidden md:flex relative pt-[40px]">
+                    <iframe
                       src={`/products/Granite Tile/${selected}/pdf/${pdf}.pdf`}
                       type="application/pdf"
                       className="w-full h-[450px] sm:h-[900px]"
-                    ></iframe> */}
-                    <iframe
-                      src="https://drive.google.com/file/d/183YxWOV-Wrs7Tfs_lcomFPu1hZWzCa4P/preview"
-                      width="640"
-                      height="480"
-                      allow="autoplay"
                     ></iframe>
+                    {/* <iframe
+                      src="https://drive.google.com/file/d/183YxWOV-Wrs7Tfs_lcomFPu1hZWzCa4P/preview"
+                      className="w-full h-[450px] sm:h-[900px]"
+                      allow="autoplay"
+                    ></iframe> */}
                   </div>
                 ) : null}
               </div>
