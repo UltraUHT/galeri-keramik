@@ -38,7 +38,7 @@ export default function ShortLink() {
               </a>
             </Link>
             <a
-              href="wa.me/+6285108889991"
+              href="https://wa.me/6285108889991"
               target="_blank"
               rel="noopener noreferrer"
             >

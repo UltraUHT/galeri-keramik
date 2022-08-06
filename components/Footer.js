@@ -64,7 +64,7 @@ function Footer() {
         <div className="flex flex-col gap-[10px] text-right">
           <p className="text-[#FFE8AC]"> Contact Us for more Information</p>
           <a
-            href="wa.me/+6285108889991"
+            href="https://wa.me/6285108889991"
             target="_blank"
             rel="noopener noreferrer"
           >
