@@ -13,11 +13,11 @@ function Whyus() {
                 className="object-contain cursor-pointer "
                 src="/whyus/1.svg"
                 alt="galeri keramik why us 1"
-                width={60}
-                height={60}
+                width={50}
+                height={50}
               />
             </div>
-            <h2 className="text-center text-[16px] md:text-[24px] xl:text-[32px]">
+            <h2 className="text-center text-[16px] md:text-[24px]">
               Quality Products
             </h2>
             <p className="text-center w-[250px] md:w-full">
@@ -31,11 +31,11 @@ function Whyus() {
                 className="object-contain cursor-pointer "
                 src="/whyus/2.svg"
                 alt="galeri keramik why us 2"
-                width={50}
-                height={50}
+                width={40}
+                height={40}
               />
             </div>
-            <h2 className="text-center text-[16px] md:text-[24px] xl:text-[32px]">
+            <h2 className="text-center text-[16px] md:text-[24px]">
               Trusted Seller
             </h2>
             <p className="text-center w-[250px] md:w-full">
@@ -49,11 +49,11 @@ function Whyus() {
                 className="object-contain cursor-pointer "
                 src="/whyus/3.svg"
                 alt="galeri keramik why us 3"
-                width={60}
-                height={60}
+                width={50}
+                height={50}
               />
             </div>
-            <h2 className="text-center text-[16px] md:text-[24px] xl:text-[32px]">
+            <h2 className="text-center text-[16px] md:text-[24px]">
               Competitive Price
             </h2>
             <p className="text-center w-[250px] md:w-full">
