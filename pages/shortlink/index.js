@@ -27,7 +27,7 @@ export default function ShortLink() {
           </div>
           <p className="text-center">
             Menyediakan berbagai macam kebutuhan bangunan.
-            <br /> Jalan. Baliwerti 118, Surabaya
+            <br /> Jalan Baliwerti 118, Surabaya
           </p>
           <div className="flex flex-col pt-[60px] gap-[20px] w-full  text-[14px] text-white">
             <Link href="/">
