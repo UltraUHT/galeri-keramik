@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -71,13 +71,41 @@ const productType2 = [
   },
 ];
 
+const logoImg = (...props) => {
+  return (
+    <div className="flex flex-wrap gap-[10px]">
+      {props[0][0].map((obj) => (
+        <Link
+          key={obj}
+          href={{
+            pathname: `/product/${props[1].replace(/\s+/g, "-").toLowerCase()}`,
+            query: { brand: obj.toUpperCase() },
+          }}
+          passHref
+        >
+          <div
+            key={obj}
+            className="w-[100px] h-[100px] xl:w-[190px] xl:h-[190px] animate-fadeDown relative"
+          >
+            <Image
+              className="object-contain cursor-pointer"
+              src={`/products/${props[1]}/logo/${obj}.png`}
+              alt="logo"
+              layout="fill"
+            />
+          </div>
+        </Link>
+      ))}
+    </div>
+  );
+};
+
 function LogoSelector() {
   const router = useRouter();
   const query = router.query;
   const tkey = query.tkey || "granite tile";
   const selectedLogo = productType2.filter((obj) => obj.name === tkey);
   const brand = selectedLogo.map((obj) => obj.brand);
-  console.log("selectedbrand", brand);
   return (
     <div className="flex justify-center py-[40px] min-h-screen flex-grow">
       <div className="flex w-full flex-col gap-[40px] px-4 md:px-0 max-w-[500px] md:max-w-[640px] lg:max-w-[840px] xl:max-w-[980px] 2xl:max-w-[1280px]">
@@ -99,7 +127,7 @@ function LogoSelector() {
             </a>
           </Link>
         </div>
-        <div className="flex flex-wrap gap-[10px]">
+        {/* <div className="flex flex-wrap gap-[10px]">
           {brand[0].map((obj) => (
             <Link
               key={obj}
@@ -122,7 +150,8 @@ function LogoSelector() {
               </div>
             </Link>
           ))}
-        </div>
+        </div> */}
+        {tkey ? logoImg(brand, tkey) : null}
       </div>
     </div>
   );
