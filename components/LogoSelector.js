@@ -100,6 +100,13 @@ const logoImg = (...props) => {
   );
 };
 
+function formatString(str) {
+  return str
+    .split(" ")
+    .map((item) => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase())
+    .join(" ");
+}
+
 function LogoSelector() {
   const router = useRouter();
   const query = router.query;
@@ -107,7 +114,7 @@ function LogoSelector() {
   const selectedLogo = productType2.filter((obj) => obj.name === tkey);
   const brand = selectedLogo.map((obj) => obj.brand);
   return (
-    <div className="flex justify-center py-[40px] min-h-screen flex-grow">
+    <div className="flex justify-center py-[20px] min-h-screen flex-grow">
       <div className="flex w-full flex-col gap-[40px] px-4 md:px-0 max-w-[500px] md:max-w-[640px] lg:max-w-[840px] xl:max-w-[980px] 2xl:max-w-[1280px]">
         <div className="w-full flex">
           <Link href="/product" passHref>
@@ -121,7 +128,7 @@ function LogoSelector() {
                     layout="fill"
                   />
                 </div>
-                {tkey.toUpperCase()}
+                {formatString(tkey)}
               </h2>
               <div className="absolute hidden lg:flex z-0 left-0 bg-[#FFE8AC] rounded-full w-[60px] h-[60px] group-hover:w-full transition-all duration-300" />
             </a>
