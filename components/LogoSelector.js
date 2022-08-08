@@ -52,7 +52,7 @@ const productType2 = [
   {
     id: 4,
     name: "door",
-    brand: ["angz", "matadoor", "top door"],
+    brand: ["angzdoor", "matadoor", "top door"],
   },
   {
     id: 5,
@@ -151,14 +151,14 @@ function LogoSelector() {
             </Link>
           ))}
         </div> */}
-        {tkey === "granite tile" ? logoImg(brand, "granite tile") : null}
-        {tkey === "ceramic" ? logoImg(brand, "ceramic") : null}
-        {tkey === "sanitary" ? logoImg(brand, "sanitary") : null}
-        {tkey === "door" ? logoImg(brand, "door") : null}
-        {tkey === "sink" ? logoImg(brand, "sink") : null}
-        {tkey === "mortar" ? logoImg(brand, "mortar") : null}
+        {tkey === "granite tile" ? logoImg(brand, "Granite Tile") : null}
+        {tkey === "ceramic" ? logoImg(brand, "Ceramic") : null}
+        {tkey === "sanitary" ? logoImg(brand, "Sanitary") : null}
+        {tkey === "door" ? logoImg(brand, "Door") : null}
+        {tkey === "sink" ? logoImg(brand, "Sink") : null}
+        {tkey === "mortar" ? logoImg(brand, "Mortar") : null}
         {tkey === "water appliances"
-          ? logoImg(brand, "water appliances")
+          ? logoImg(brand, "Water Appliances")
           : null}
       </div>
     </div>
