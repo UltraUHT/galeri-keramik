@@ -55,7 +55,7 @@ const productType2 = [
   {
     id: 4,
     name: "Door",
-    brand: ["angz", "matadoor", "top door"],
+    brand: ["angzdoor", "matadoor", "top door"],
     link: ["MATADOOR", "ANGZDOOR", "MATADOOR", "TOP DOOR"],
   },
   {
