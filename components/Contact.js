@@ -95,7 +95,7 @@ function Contact() {
             </a>
             <a
               className="flex items-center justify-center gap-[10px]"
-              href="wa.me/+6285108889991"
+              href="https://wa.me/6285108889991"
               target="_blank"
               rel="noopener noreferrer"
             >
