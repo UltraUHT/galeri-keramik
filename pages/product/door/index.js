@@ -3,8 +3,13 @@ import Navigation from "../../../components/Navigation";
 import Footer from "../../../components/Footer";
 import Whatsapp from "../../../components/Whatsapp";
 import DoorComponent from "../../../components/Door";
+import { useRouter } from "next/router";
+import LogoSelector from "../../../components/LogoSelector";
 
 export default function Door() {
+  const router = useRouter();
+  const query = router.query;
+  const tkey = query.tkey || "false";
   return (
     <div>
       <Head>
@@ -17,7 +22,8 @@ export default function Door() {
       </Head>
       <Navigation />
       <Whatsapp />
-      <DoorComponent />
+
+      {tkey === "false" ? <DoorComponent /> : <LogoSelector />}
       <Footer />
     </div>
   );

@@ -15,7 +15,7 @@ const graniteTiles = [
   {
     id: 2,
     name: "MU",
-    link: ["Retail Catalog - New 2022"],
+    link: ["Retail Catalogue - New 2022"],
     pdf: [
       "https://drive.google.com/file/d/13FGRoC2Wp3SZ3Kz2dUBgDaTQ3H1zbxr9/preview",
     ],
@@ -112,6 +112,7 @@ function MortarComponent() {
                 </Link>
               ))}
             </ul>
+            <p className="lg:hidden">Klik untuk memilih brand: </p>
             <select
               className="w-full flex lg:hidden bg-white drop-shadow-sm border mb-[20px] py-2"
               onChange={(e) => {
@@ -181,7 +182,7 @@ function MortarComponent() {
               ) : null}
             </div>
             <div className="py-[40px] xl:pb-0">
-              <h2>Read Our Catalog</h2>
+              <h2>Read Our Catalogue</h2>
 
               <div className="pt-[20px] flex flex-wrap gap-[20px]">
                 {pdfList[0].map((obj, index) => (

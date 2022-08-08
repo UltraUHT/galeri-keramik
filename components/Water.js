@@ -121,6 +121,7 @@ function WaterComponent() {
                 </Link>
               ))}
             </ul>
+            <p className="lg:hidden">Klik untuk memilih brand: </p>
             <select
               className="w-full flex lg:hidden bg-white drop-shadow-sm border mb-[20px] py-2"
               onChange={(e) => {
@@ -204,7 +205,7 @@ function WaterComponent() {
               ) : null}
             </div>
             <div className="py-[40px] xl:pb-0">
-              <h2>Read Our Catalog</h2>
+              <h2>Read Our Catalogue</h2>
 
               <div className="pt-[20px] flex flex-wrap gap-[20px]">
                 {pdfList[0].map((obj, index) => (

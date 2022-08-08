@@ -6,6 +6,14 @@ import { useRouter } from "next/router";
 const graniteTiles = [
   {
     id: 1,
+    name: "BLANCO",
+    link: ["BLANCO Product Catalogue 2021"],
+    pdf: [
+      "https://drive.google.com/file/d/1tKQ5Mb02UTmyVLQyze-tnsrLS3YGRqvI/preview",
+    ],
+  },
+  {
+    id: 2,
     name: "FICO",
     link: ["FICO KITCHEN SINK"],
     pdf: [
@@ -13,7 +21,7 @@ const graniteTiles = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     name: "ROYAL",
     link: ["ROYAL KITCHEN SET AND SINK 2022"],
     pdf: [
@@ -104,6 +112,7 @@ function SinkComponent() {
                 </Link>
               ))}
             </ul>
+            <p className="lg:hidden">Klik untuk memilih brand: </p>
             <select
               className="w-full flex lg:hidden bg-white drop-shadow-sm border mb-[20px] py-2"
               onChange={(e) => {
@@ -138,7 +147,7 @@ function SinkComponent() {
             </div>
 
             <div className="py-[40px] xl:pb-0">
-              <h2>Read Our Catalog</h2>
+              <h2>Read Our Catalogue</h2>
 
               <div className="pt-[20px] flex flex-wrap gap-[20px]">
                 {pdfList[0].map((obj, index) => (

@@ -3,8 +3,13 @@ import Navigation from "../../../components/Navigation";
 import Footer from "../../../components/Footer";
 import Whatsapp from "../../../components/Whatsapp";
 import GraniteComponent from "../../../components/Granite";
+import { useRouter } from "next/router";
+import LogoSelector from "../../../components/LogoSelector";
 
 export default function Granite() {
+  const router = useRouter();
+  const query = router.query;
+  const tkey = query.tkey || "false";
   return (
     <div>
       <Head>
@@ -17,7 +22,7 @@ export default function Granite() {
       </Head>
       <Navigation />
       <Whatsapp />
-      <GraniteComponent />
+      {tkey === "false" ? <GraniteComponent /> : <LogoSelector />}
       <Footer />
     </div>
   );

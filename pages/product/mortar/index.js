@@ -3,8 +3,13 @@ import Navigation from "../../../components/Navigation";
 import Footer from "../../../components/Footer";
 import Whatsapp from "../../../components/Whatsapp";
 import MortarComponent from "../../../components/Mortar";
+import { useRouter } from "next/router";
+import LogoSelector from "../../../components/LogoSelector";
 
 export default function Mortar() {
+  const router = useRouter();
+  const query = router.query;
+  const tkey = query.tkey || "false";
   return (
     <div>
       <Head>
@@ -17,7 +22,8 @@ export default function Mortar() {
       </Head>
       <Navigation />
       <Whatsapp />
-      <MortarComponent />
+
+      {tkey === "false" ? <MortarComponent /> : <LogoSelector />}
       <Footer />
     </div>
   );

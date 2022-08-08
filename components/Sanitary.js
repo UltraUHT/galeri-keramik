@@ -7,6 +7,7 @@ const graniteTiles = [
   {
     id: 1,
     name: "AMERICAN STANDARD",
+    displayName: "AMERICAN STANDARD",
     link: ["AMERICAN STANDARD 2022"],
     pdf: [
       "https://drive.google.com/file/d/1YNuonU5hRNiQEcaPm_F2karIWMAYNG2c/preview",
@@ -15,6 +16,7 @@ const graniteTiles = [
   {
     id: 2,
     name: "COTTO",
+    displayName: "COTTO",
     link: ["COTTO CATALOGUE"],
     pdf: [
       "https://drive.google.com/file/d/10NVybGrzAcjT1clMUlQWpxwhN4UCH0Hb/preview",
@@ -23,6 +25,7 @@ const graniteTiles = [
   {
     id: 3,
     name: "FLIESSEN",
+    displayName: "FLIEßEN",
     link: ["fließen BROCHURE 2022"],
     pdf: [
       "https://drive.google.com/file/d/15J7KJ36G8658uKgDaWITth9N_PhoQpmr/preview",
@@ -31,6 +34,7 @@ const graniteTiles = [
   {
     id: 4,
     name: "ROCA",
+    displayName: "ROCA",
     link: ["ROCA SANITARY"],
     pdf: [
       "https://drive.google.com/file/d/1oa1aK4zob_uIse5D7zW4-U2AwpSQrWgw/preview",
@@ -39,6 +43,7 @@ const graniteTiles = [
   {
     id: 5,
     name: "SANDIMAS OULU",
+    displayName: "SANDIMAS OULU",
     link: ["Sandimas Oulu Sanitary 2022"],
     pdf: [
       "https://drive.google.com/file/d/18LCnmQ-0Ld5VO50RCwdZCriARLYdRR7u/preview",
@@ -47,9 +52,10 @@ const graniteTiles = [
   {
     id: 6,
     name: "TOTO",
+    displayName: "TOTO",
     link: [
-      "TOTO Fitting Catalog February 2022",
-      "TOTO Sanitary Catalog February 2022",
+      "TOTO Fitting Catalogue February 2022",
+      "TOTO Sanitary Catalogue February 2022",
     ],
     pdf: [
       "https://drive.google.com/file/d/1uly-ANfEsFSPXr9zA5I_Slf1T9l2-EmE/preview",
@@ -134,12 +140,13 @@ function SanitaryComponent() {
                           : null
                       }
                     >
-                      {obj.name}
+                      {obj.displayName}
                     </li>
                   </a>
                 </Link>
               ))}
             </ul>
+            <p className="lg:hidden">Klik untuk memilih brand: </p>
             <select
               className="w-full flex lg:hidden bg-white drop-shadow-sm border mb-[20px] py-2"
               onChange={(e) => {
@@ -156,11 +163,11 @@ function SanitaryComponent() {
                 <>
                   {obj.name === brand ? (
                     <option key={obj.id} value={obj.name + index} selected>
-                      {obj.name}
+                      {obj.displayName}
                     </option>
                   ) : (
                     <option key={obj.id} value={obj.name + index}>
-                      {obj.name}
+                      {obj.displayName}
                     </option>
                   )}
                 </>
@@ -349,7 +356,7 @@ function SanitaryComponent() {
               ) : null}
             </div>
             <div className="py-[40px] xl:pb-0">
-              <h2>Read Our Catalog</h2>
+              <h2>Read Our Catalogue</h2>
 
               <div className="pt-[20px] flex flex-wrap gap-[20px]">
                 {pdfList[0].map((obj, index) => (

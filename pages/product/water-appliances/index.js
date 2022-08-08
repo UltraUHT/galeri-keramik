@@ -3,8 +3,13 @@ import Navigation from "../../../components/Navigation";
 import Footer from "../../../components/Footer";
 import Whatsapp from "../../../components/Whatsapp";
 import WaterComponent from "../../../components/Water";
+import { useRouter } from "next/router";
+import LogoSelector from "../../../components/LogoSelector";
 
 export default function Water() {
+  const router = useRouter();
+  const query = router.query;
+  const tkey = query.tkey || "false";
   return (
     <div>
       <Head>
@@ -17,7 +22,7 @@ export default function Water() {
       </Head>
       <Navigation />
       <Whatsapp />
-      <WaterComponent />
+      {tkey === "false" ? <WaterComponent /> : <LogoSelector />}
       <Footer />
     </div>
   );

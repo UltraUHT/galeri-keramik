@@ -35,7 +35,14 @@ const imageLink = [
   },
 ];
 
-const smallIco = ["PLATINUM", "TOTO", "MATADOOR", "FICO", "AM", "PROFIL TANK"];
+const smallIco = [
+  "ceramic",
+  "sanitary",
+  "door",
+  "sink",
+  "mortar",
+  "water appliances",
+];
 
 function ProductLink() {
   return (
@@ -46,7 +53,7 @@ function ProductLink() {
           <Link
             href={{
               pathname: "/product/granite-tile",
-              query: { brand: "NIRO" },
+              query: { tkey: "granite tile" },
             }}
             passHref
           >
@@ -73,7 +80,7 @@ function ProductLink() {
                 key={obj.id}
                 href={{
                   pathname: `${obj.link}`,
-                  query: { brand: smallIco[index] },
+                  query: { tkey: smallIco[index] },
                 }}
                 passHref
               >

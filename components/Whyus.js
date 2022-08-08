@@ -7,7 +7,7 @@ function Whyus() {
       <div className="flex flex-col justify-center items-center w-full px-4 py-2 2xl:px-0 gap-[30px] max-w-[500px] md:max-w-[640px] lg:max-w-[840px]  xl:max-w-[980px] 2xl:max-w-[1280px] border-t pt-[20px]">
         <h2>Why Us</h2>
         <div className="flex flex-col md:flex-row gap-[20px] w-full items-center md:items-start">
-          <div className="flex flex-col items-center gap-[8px] md:w-1/3 ">
+          <div className="flex flex-row md:flex-col items-center gap-[8px] md:w-1/3 ">
             <div className="md:flex px-4 items-center text-black">
               <Image
                 className="object-contain cursor-pointer "
@@ -17,15 +17,17 @@ function Whyus() {
                 height={50}
               />
             </div>
-            <h2 className="text-center text-[16px] md:text-[24px]">
-              Quality Products
-            </h2>
-            <p className="text-center w-[250px] md:w-full">
-              Kami selalu memastikan bahwa produk yang kami jual merupakan
-              produk pilihan yang berkualitas.
-            </p>
+            <div className="flex flex-col">
+              <h2 className="text-left md:text-center text-[16px] md:text-[24px]">
+                Quality Products
+              </h2>
+              <p className="text-left md:text-center w-[250px] md:w-full">
+                Kami selalu memastikan bahwa produk yang kami jual merupakan
+                produk pilihan yang berkualitas.
+              </p>
+            </div>
           </div>
-          <div className="flex flex-col items-center gap-[8px] md:w-1/3">
+          <div className="flex flex-row md:flex-col  items-center gap-[8px] md:w-1/3">
             <div className="md:flex px-4 items-center text-black py-[5px]">
               <Image
                 className="object-contain cursor-pointer "
@@ -35,15 +37,17 @@ function Whyus() {
                 height={40}
               />
             </div>
-            <h2 className="text-center text-[16px] md:text-[24px]">
-              Trusted Seller
-            </h2>
-            <p className="text-center w-[250px] md:w-full">
-              Sebagai toko bahan bangunan, kepercayaan dari pelanggan setia kami
-              membuat perusahaan kami berkembang pesat.
-            </p>
+            <div className="flex flex-col">
+              <h2 className="text-left md:text-center text-[16px] md:text-[24px]">
+                Trusted Seller
+              </h2>
+              <p className="text-left md:text-center w-[250px] md:w-full">
+                Sebagai toko bahan bangunan, kepercayaan dari pelanggan setia
+                kami membuat perusahaan kami berkembang pesat.
+              </p>
+            </div>
           </div>
-          <div className="flex flex-col items-center gap-[8px] md:w-1/3">
+          <div className="flex flex-row md:flex-col items-center gap-[8px] md:w-1/3">
             <div className="md:flex px-4 items-center text-black">
               <Image
                 className="object-contain cursor-pointer "
@@ -53,13 +57,15 @@ function Whyus() {
                 height={50}
               />
             </div>
-            <h2 className="text-center text-[16px] md:text-[24px]">
-              Competitive Price
-            </h2>
-            <p className="text-center w-[250px] md:w-full">
-              {` Mengutamakan kepuasaan pelanggan, kami selalu memberikan harga
+            <div className="flex flex-col">
+              <h2 className="text-left md:text-center text-[16px] md:text-[24px]">
+                Competitive Price
+              </h2>
+              <p className="text-left md:text-center w-[250px] md:w-full  ">
+                {` Mengutamakan kepuasaan pelanggan, kami selalu memberikan harga
             terbaik & kompetitif dengan kualitas tinggi kepada pelanggan.`}
-            </p>
+              </p>
+            </div>
           </div>
         </div>
       </div>

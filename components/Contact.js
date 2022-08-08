@@ -91,7 +91,7 @@ function Contact() {
                   fill="#525252"
                 />
               </svg>
-              galerikeramik@yahoo
+              galerikeramik@yahoo.com
             </a>
             <a
               className="flex items-center justify-center gap-[10px]"

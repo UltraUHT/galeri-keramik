@@ -39,7 +39,7 @@ const graniteTiles = [
   {
     id: 5,
     name: "INDOGRESS",
-    link: ["INDOGRESS catalog 2022"],
+    link: ["INDOGRESS catalogue 2022"],
     pdf: [
       "https://drive.google.com/file/d/12bGojGAkSXDCcwjb4sY6Yq-oeqtEsYjQ/preview",
     ],
@@ -47,7 +47,7 @@ const graniteTiles = [
   {
     id: 6,
     name: "INFINITI",
-    link: ["INFINITI catalog 2021"],
+    link: ["INFINITI catalogue 2021"],
     pdf: [
       "https://drive.google.com/file/d/1g9juLAxoEMZYKTyZsGImhHFyzugyLGUr/preview",
     ],
@@ -102,7 +102,7 @@ const graniteTiles = [
   {
     id: 11,
     name: "SUMMIT",
-    link: ["SUMMIT catalog 2022"],
+    link: ["SUMMIT catalogue 2022"],
     pdf: [
       "https://drive.google.com/file/d/122H-k_YJ_53YIOA1pZ8HxQq0uWBuf9lB/preview",
     ],
@@ -110,7 +110,7 @@ const graniteTiles = [
   {
     id: 12,
     name: "TITANIUM",
-    link: ["TITANIUM general catalog 0722"],
+    link: ["TITANIUM general catalogue 0722"],
     pdf: [
       "https://drive.google.com/file/d/14JJbqDWaSJKcsQ8z-owlMK4Zyy7xZL8z/preview",
     ],
@@ -236,6 +236,7 @@ function GraniteComponent() {
                 </Link>
               ))}
             </ul>
+            <p className="lg:hidden">Klik untuk memilih brand: </p>
             <select
               className="w-full flex lg:hidden bg-white drop-shadow-sm border mb-[20px] py-2"
               onChange={(e) => {
@@ -295,7 +296,7 @@ function GraniteComponent() {
               </p>
             </div>
             <div className="py-[40px] xl:pb-0">
-              <h2>Read Our Catalog</h2>
+              <h2>Read Our Catalogue</h2>
 
               <div className="pt-[20px] flex flex-wrap gap-[20px]">
                 {pdfList[0].map((obj, index) => (

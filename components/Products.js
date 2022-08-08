@@ -14,12 +14,12 @@ const productType2 = [
       "indogress",
       "infinity",
       "niro",
-      "roman",
+      "roman granit",
       "sanjimas",
       "summit",
       "titanium",
-      "valentino",
-      "venus",
+      "valentino gress",
+      "venus tiles",
       "vincenza",
     ],
     link: ["NIRO", "TITANIUM", "SUMMIT", "VENUS TILES"],
@@ -41,20 +41,27 @@ const productType2 = [
   {
     id: 3,
     name: "Sanitary",
-    brand: ["american", "cotto", "fliessen", "oulu", "roca", "toto"],
+    brand: [
+      "american standard",
+      "cotto",
+      "fliessen",
+      "sandimas oulu",
+      "roca",
+      "toto",
+    ],
     link: ["TOTO", "FLIESSEN", "AMERICAN STANDARD", "ROCA"],
   },
   {
     id: 4,
     name: "Door",
-    brand: ["angz", "matadoor", "topdoor"],
+    brand: ["angz", "matadoor", "top door"],
     link: ["MATADOOR", "ANGZDOOR", "MATADOOR", "TOP DOOR"],
   },
   {
     id: 5,
     name: "Sink",
-    brand: ["fico", "royal"],
-    link: ["FICO", "ROYAL", "FICO", "ROYAL"],
+    brand: ["blanco", "fico", "royal"],
+    link: ["BLANCO", "ROYAL", "FICO", "ROYAL"],
   },
   {
     id: 6,
@@ -65,19 +72,19 @@ const productType2 = [
   {
     id: 7,
     name: "Water Appliances",
-    brand: ["ariston", "profil", "royal", "solahart", "tirta"],
+    brand: ["ariston", "profil tank", "solahart", "tirta tank"],
     link: ["PROFIL TANK", "ARISTON", "ARISTON", "SOLAHART"],
   },
 ];
 
 const smallIco = [
-  "NIRO",
-  "PLATINUM",
-  "TOTO",
-  "MATADOOR",
-  "FICO",
-  "AM",
-  "PROFIL TANK",
+  "granite tile",
+  "ceramic",
+  "sanitary",
+  "door",
+  "sink",
+  "mortar",
+  "water appliances",
 ];
 
 function Products() {
@@ -205,17 +212,28 @@ function Products() {
             </div>
             <div className="flex flex-wrap">
               {brand[0].map((obj) => (
-                <div
+                <Link
                   key={obj}
-                  className="w-[80px] h-[80px] xl:w-[110px] xl:h-[110px] animate-fadeDown relative"
+                  href={{
+                    pathname: `/product/${selected
+                      .replace(/\s+/g, "-")
+                      .toLowerCase()}`,
+                    query: { brand: obj.toUpperCase() },
+                  }}
+                  passHref
                 >
-                  <Image
-                    className="object-contain cursor-pointer"
-                    src={`/products/${selected}/logo/${obj}.png`}
-                    alt="logo"
-                    layout="fill"
-                  />
-                </div>
+                  <div
+                    key={obj}
+                    className="w-[80px] h-[80px] xl:w-[110px] xl:h-[110px] animate-fadeDown relative"
+                  >
+                    <Image
+                      className="object-contain cursor-pointer"
+                      src={`/products/${selected}/logo/${obj}.png`}
+                      alt="logo"
+                      layout="fill"
+                    />
+                  </div>
+                </Link>
               ))}
             </div>
             <div className="w-full flex items-end justify-end pt-[20px] xl:pt-0">
@@ -237,7 +255,7 @@ function Products() {
                   pathname: `/product/${obj.name
                     .replace(/\s+/g, "-")
                     .toLowerCase()}`,
-                  query: { brand: smallIco[index] },
+                  query: { tkey: smallIco[index] },
                 }}
                 passHref
               >

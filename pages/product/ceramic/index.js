@@ -3,8 +3,13 @@ import Navigation from "../../../components/Navigation";
 import Footer from "../../../components/Footer";
 import Whatsapp from "../../../components/Whatsapp";
 import CeramicComponent from "../../../components/Ceramic";
+import { useRouter } from "next/router";
+import LogoSelector from "../../../components/LogoSelector";
 
 export default function Ceramic() {
+  const router = useRouter();
+  const query = router.query;
+  const tkey = query.tkey || "false";
   return (
     <div>
       <Head>
@@ -17,7 +22,7 @@ export default function Ceramic() {
       </Head>
       <Navigation />
       <Whatsapp />
-      <CeramicComponent />
+      {tkey === "false" ? <CeramicComponent /> : <LogoSelector />}
       <Footer />
     </div>
   );
