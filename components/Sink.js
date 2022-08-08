@@ -9,7 +9,7 @@ const graniteTiles = [
     name: "BLANCO",
     link: ["BLANCO Product Catalogue 2021"],
     pdf: [
-      "https://drive.google.com/file/d/1tKQ5Mb02UTmyVLQyze-tnsrLS3YGRqvI/preview",
+      "https://drive.google.com/file/d/1DV0rUnTKKasM6uuqSIMk2h2IIFPdGYq5/preview",
     ],
   },
   {
@@ -142,6 +142,7 @@ function SinkComponent() {
           </div>
           <div className="lg:w-4/5">
             <div className="w-full h-[165px] border sm:h-[240px] md:h-[320px] lg:h-[350px] xl:h-[400px] 2xl:h-[514px] relative">
+              {brand === "BLANCO" ? mainImage("BLANCO") : null}
               {brand === "FICO" ? mainImage("FICO") : null}
               {brand === "ROYAL" ? mainImage("ROYAL") : null}
             </div>
