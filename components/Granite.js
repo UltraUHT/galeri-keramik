@@ -57,8 +57,8 @@ const graniteTiles = [
     name: "NIRO",
     link: ["NIRO BIG SLAB 2022", "NIRO REGULAR SIZE 2022"],
     pdf: [
-      "https://drive.google.com/file/d/19iWnzoiFRP8dBWdNvLnuDsxZattyP33W/preview",
       "https://drive.google.com/file/d/1Uq_WO5Nvr7Ly4WRgWpewX4m7RTaZOQxk/preview",
+      "https://drive.google.com/file/d/19iWnzoiFRP8dBWdNvLnuDsxZattyP33W/preview",
     ],
   },
   {

@@ -15,6 +15,7 @@ const productType2 = [
       "indogress",
       "infinity",
       "niro",
+      "portino",
       "roman granit",
       "sanjimas",
       "summit",
