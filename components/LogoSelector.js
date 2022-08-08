@@ -151,7 +151,15 @@ function LogoSelector() {
             </Link>
           ))}
         </div> */}
-        {tkey ? logoImg(brand, tkey) : null}
+        {tkey === "granite tile" ? logoImg(brand, "granite tile") : null}
+        {tkey === "ceramic" ? logoImg(brand, "ceramic") : null}
+        {tkey === "sanitary" ? logoImg(brand, "sanitary") : null}
+        {tkey === "door" ? logoImg(brand, "door") : null}
+        {tkey === "sink" ? logoImg(brand, "sink") : null}
+        {tkey === "mortar" ? logoImg(brand, "mortar") : null}
+        {tkey === "water appliances"
+          ? logoImg(brand, "water appliances")
+          : null}
       </div>
     </div>
   );
