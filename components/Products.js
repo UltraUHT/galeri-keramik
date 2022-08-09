@@ -84,6 +84,8 @@ const productType2 = [
   },
 ];
 
+//.
+
 const smallIco = [
   "granite tile",
   "ceramic",
