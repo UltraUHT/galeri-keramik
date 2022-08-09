@@ -80,7 +80,7 @@ const productType2 = [
     id: 8,
     name: "Galvalume",
     brand: ["galvalume"],
-    link: ["GALVALUME"],
+    link: ["GALVALUME", "GALVALUME", "GALVALUME", "GALVALUME"],
   },
 ];
 
