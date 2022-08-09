@@ -76,6 +76,12 @@ const productType2 = [
     brand: ["ariston", "profil tank", "solahart", "tirta tank"],
     link: ["PROFIL TANK", "ARISTON", "ARISTON", "SOLAHART"],
   },
+  {
+    id: 8,
+    name: "Galvalume",
+    brand: ["galvalume"],
+    link: ["GALVALUME"],
+  },
 ];
 
 const smallIco = [
@@ -86,6 +92,7 @@ const smallIco = [
   "sink",
   "mortar",
   "water appliances",
+  "galvalume",
 ];
 
 function Products() {

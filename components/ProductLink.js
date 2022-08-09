@@ -33,6 +33,11 @@ const imageLink = [
     name: "Water Appliances",
     link: "/product/water-appliances",
   },
+  {
+    id: 8,
+    name: "Galvalume",
+    link: "/product/galvalume",
+  },
 ];
 
 const smallIco = [
@@ -42,6 +47,7 @@ const smallIco = [
   "sink",
   "mortar",
   "water appliances",
+  "galvalume",
 ];
 
 function ProductLink() {

@@ -70,11 +70,16 @@ const productType2 = [
     name: "water appliances",
     brand: ["ariston", "profil tank", "solahart", "tirta tank"],
   },
+  {
+    id: 8,
+    name: "galvalume",
+    brand: ["galvalume"],
+  },
 ];
 
 const logoImg = (...props) => {
   return (
-    <div className="flex flex-wrap gap-[10px]">
+    <div className="flex flex-wrap gap-[5px] sm:gap-[10px] justify-start">
       {props[0][0].map((obj) => (
         <Link
           key={obj}
@@ -86,7 +91,7 @@ const logoImg = (...props) => {
         >
           <div
             key={obj}
-            className="w-[100px] h-[100px] xl:w-[190px] xl:h-[190px] animate-fadeDown relative"
+            className="w-[110px] h-[110px] md:w-[140px] md:h-[140px] xl:w-[190px] xl:h-[190px] animate-fadeDown relative"
           >
             <Image
               className="object-contain cursor-pointer"
@@ -168,6 +173,7 @@ function LogoSelector() {
         {tkey === "water appliances"
           ? logoImg(brand, "Water Appliances")
           : null}
+        {tkey === "galvalume" ? logoImg(brand, "Galvalume") : null}
       </div>
     </div>
   );
