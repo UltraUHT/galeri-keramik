@@ -34,6 +34,11 @@ const footerLink = [
     name: "Water Appliances",
     link: "/product/water-appliances",
   },
+  {
+    id: 8,
+    name: "Galvalume",
+    link: "/product/galvalume",
+  },
 ];
 
 function Footer() {

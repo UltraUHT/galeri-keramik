@@ -91,7 +91,7 @@ const logoImg = (...props) => {
         >
           <div
             key={obj}
-            className="w-[110px] h-[110px] md:w-[140px] md:h-[140px] xl:w-[190px] xl:h-[190px] animate-fadeDown relative"
+            className="w-[110px] h-[110px] md:w-[140px] md:h-[140px] xl:w-[190px] xl:h-[190px] animate-fadeDown relative shadow-md"
           >
             <Image
               className="object-contain cursor-pointer"
@@ -140,30 +140,6 @@ function LogoSelector() {
             </a>
           </Link>
         </div>
-        {/* <div className="flex flex-wrap gap-[10px]">
-          {brand[0].map((obj) => (
-            <Link
-              key={obj}
-              href={{
-                pathname: `/product/${tkey.replace(/\s+/g, "-").toLowerCase()}`,
-                query: { brand: obj.toUpperCase() },
-              }}
-              passHref
-            >
-              <div
-                key={obj}
-                className="w-[100px] h-[100px] xl:w-[190px] xl:h-[190px] animate-fadeDown relative"
-              >
-                <Image
-                  className="object-contain cursor-pointer"
-                  src={`/products/${tkey}/logo/${obj}.png`}
-                  alt="logo"
-                  layout="fill"
-                />
-              </div>
-            </Link>
-          ))}
-        </div> */}
         {tkey === "granite tile" ? logoImg(brand, "Granite Tile") : null}
         {tkey === "ceramic" ? logoImg(brand, "Ceramic") : null}
         {tkey === "sanitary" ? logoImg(brand, "Sanitary") : null}
