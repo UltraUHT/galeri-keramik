@@ -3,41 +3,41 @@ import Link from "next/link";
 import Image from "next/image";
 
 const footerLink = [
-  { id: 1, name: "Granite", link: "/product/granite-tile" },
+  { id: 1, name: "Granite", link: "/product/granite-tile?tkey=granite tile" },
   {
     id: 2,
     name: "Ceramic",
-    link: "/product/ceramic",
+    link: "/product/ceramic?tkey=ceramic",
   },
   {
     id: 3,
     name: "Sanitary",
-    link: "/product/sanitary",
+    link: "/product/sanitary?tkey=sanitary",
   },
   {
     id: 4,
     name: "Door",
-    link: "/product/door",
+    link: "/product/door?tkey=door",
   },
   {
     id: 5,
     name: "Sink",
-    link: "/product/sink",
+    link: "/product/sink?tkey=sink",
   },
   {
     id: 6,
     name: "Mortar",
-    link: "/product/mortar",
+    link: "/product/mortar?tkey=mortar",
   },
   {
     id: 7,
     name: "Water Appliances",
-    link: "/product/water-appliances",
+    link: "/product/water-appliances?tkey=water appliances",
   },
   {
     id: 8,
     name: "Galvalume",
-    link: "/product/galvalume",
+    link: "/product/galvalume?tkey=galvalume",
   },
 ];
 
