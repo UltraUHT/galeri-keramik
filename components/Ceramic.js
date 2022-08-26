@@ -47,9 +47,10 @@ const graniteTiles = [
   {
     id: 6,
     name: "PLATINUM",
-    link: ["PLATINUM CERAMIC 2022"],
+    link: ["PLATINUM CERAMIC 2022", "PLATINUM DTBS 50X50"],
     pdf: [
       "https://drive.google.com/file/d/1cCs44Z8qQ_0t4qIsaNgV6Zgo8s2_4oHE/preview",
+      "https://drive.google.com/file/d/1ByLtRSanUl5fzWpoq4FkkSqrYTu0Hkyf/preview",
     ],
   },
   {
