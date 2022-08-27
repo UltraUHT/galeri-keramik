@@ -43,7 +43,16 @@ export default function ShortLink() {
               rel="noopener noreferrer"
             >
               <div className="bg-[#242424] p-4 rounded-xl w-full cursor-pointer shadow-md ">
-                Informasi & Pemesanan - Whatsapp
+                Whatsapp - Informasi & Pemesanan
+              </div>
+            </a>
+            <a
+              href="https://wa.me/6285161318789"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="bg-[#242424] p-4 rounded-xl w-full cursor-pointer shadow-md ">
+                Whatsapp - Howen Homan
               </div>
             </a>
             <a
