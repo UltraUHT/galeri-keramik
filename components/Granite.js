@@ -41,7 +41,7 @@ const graniteTiles = [
     name: "INDOGRESS",
     link: ["INDOGRESS catalogue 2022"],
     pdf: [
-      "https://drive.google.com/file/d/12bGojGAkSXDCcwjb4sY6Yq-oeqtEsYjQ/preview",
+      "https://drive.google.com/file/d/1_iFTJzwRtPFSuqe2vc_PlgdC0jdEMW-0/preview",
     ],
   },
   {
