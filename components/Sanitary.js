@@ -62,6 +62,15 @@ const graniteTiles = [
       "https://drive.google.com/file/d/13PUc8yjKnQut1Pd7JBJ2LYHTGYBmO9z3/preview",
     ],
   },
+  {
+    id: 7,
+    name: "VOLK",
+    displayName: "VOLK",
+    link: ["Catalog Volk 2022"],
+    pdf: [
+      "https://drive.google.com/file/d/1QC_J0LOTk-Kpak2vY3ELZ0oZbk8jsc5I/preview",
+    ],
+  },
 ];
 
 const mainImage = (props) => {
@@ -184,6 +193,7 @@ function SanitaryComponent() {
               {brand === "ROCA" ? mainImage("ROCA") : null}
               {brand === "SANDIMAS OULU" ? mainImage("SANDIMAS OULU") : null}
               {brand === "TOTO" ? mainImage("TOTO") : null}
+              {brand === "VOLK" ? mainImage("VOLK") : null}
             </div>
             <div className="pt-[40px]">
               <h2>About Product</h2>
@@ -329,6 +339,15 @@ function SanitaryComponent() {
                   <br />
                   <br />
                   Berikut ini merupakan ecatalogue ROCA. Hubungi kami untuk
+                  informasi lebih lanjut.
+                </p>
+              ) : null}
+              {brand === "VOLK" ? (
+                <p className="pt-[25px]">
+                  VOLK menyediakan berbagai macam produk kamar mandi.
+                  <br />
+                  <br />
+                  Berikut ini merupakan ecatalogue VOLK. Hubungi kami untuk
                   informasi lebih lanjut.
                 </p>
               ) : null}

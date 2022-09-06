@@ -48,6 +48,7 @@ const productType2 = [
       "sandimas oulu",
       "roca",
       "toto",
+      "volk",
     ],
   },
   {

@@ -49,6 +49,7 @@ const productType2 = [
       "sandimas oulu",
       "roca",
       "toto",
+      "volk",
     ],
     link: ["TOTO", "FLIESSEN", "AMERICAN STANDARD", "ROCA"],
   },
