@@ -6,6 +6,13 @@ import Whyus from "../components/Whyus";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import Whatsapp from "../components/Whatsapp";
+import TagManager from "react-gtm-module";
+
+const tagManagerArgs = {
+  gtmId: "GTM-MSH8C97",
+};
+
+TagManager.initialize(tagManagerArgs);
 
 export default function Home() {
   return (
