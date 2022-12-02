@@ -28,13 +28,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
         <link rel="icon" href="/icons/logo_tab.png" />
       </Head>
-      <Navigation />
-      <Whatsapp />
-      <Hero />
-      <Products />
-      <Whyus />
-      <Contact />
-      <Footer />
+      <body>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-MSH8C97"
+            height="0"
+            width="0"
+            style="display:none;visibility:hidden"
+          ></iframe>
+        </noscript>
+        <Navigation />
+        <Whatsapp />
+        <Hero />
+        <Products />
+        <Whyus />
+        <Contact />
+        <Footer />
+      </body>
     </div>
   );
 }
