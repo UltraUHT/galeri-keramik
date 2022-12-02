@@ -24,14 +24,6 @@ export default function Home() {
         />
         <link rel="icon" href="/icons/logo_tab.png" />
       </Head>
-      <noscript>
-        <iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-MSH8C97"
-          height="0"
-          width="0"
-          style="display:none;visibility:hidden"
-        ></iframe>
-      </noscript>
       <Navigation />
       <Whatsapp />
       <Hero />
