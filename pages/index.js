@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Script from "next/script";
 import Navigation from "../components/Navigation";
 import Hero from "../components/Hero";
 import Products from "../components/Products";
@@ -11,7 +12,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <script
+        <Script
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -20,7 +21,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-MSH8C97');`,
           }}
-        ></script>
+        ></Script>
         <title>Galeri Keramik</title>
         <meta
           name="description"
@@ -34,7 +35,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             src="https://www.googletagmanager.com/ns.html?id=GTM-MSH8C97"
             height="0"
             width="0"
-            style="display:none;visibility:hidden"
+            style={{ display: 'none', visibility: 'hidden' }}
           ></iframe>
         </noscript>
         <Navigation />

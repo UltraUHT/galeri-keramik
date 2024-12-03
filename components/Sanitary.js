@@ -54,12 +54,12 @@ const graniteTiles = [
     name: "TOTO",
     displayName: "TOTO",
     link: [
-      "TOTO Fitting Catalogue February 2022",
-      "TOTO Sanitary Catalogue February 2022",
+      "TOTO Fitting Catalogue 2024",
+      "TOTO Sanitary Catalogue 2024",
     ],
     pdf: [
-      "https://drive.google.com/file/d/1uly-ANfEsFSPXr9zA5I_Slf1T9l2-EmE/preview",
-      "https://drive.google.com/file/d/13PUc8yjKnQut1Pd7JBJ2LYHTGYBmO9z3/preview",
+      "https://drive.google.com/file/d/1vwryQio1S9yqM4JEDuvetYdNpIuQ7TYh/preview",
+      "https://drive.google.com/file/d/1kDoIdTXIwtvh93OUdkYzfucJEtJWHQKZ/preview",
     ],
   },
   {

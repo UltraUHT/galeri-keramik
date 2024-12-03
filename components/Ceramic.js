@@ -7,9 +7,9 @@ const graniteTiles = [
   {
     id: 1,
     name: "HABITAT",
-    link: ["HABITAT 2022"],
+    link: ["HABITAT 2024"],
     pdf: [
-      "https://drive.google.com/file/d/183YxWOV-Wrs7Tfs_lcomFPu1hZWzCa4P/preview",
+      "https://drive.google.com/file/d/1q8-V0RIjQbvbFQjWNS6LuLyCreaVISOB/preview",
     ],
   },
   {
@@ -17,59 +17,83 @@ const graniteTiles = [
     name: "HERKULES",
     link: ["HERKULES"],
     pdf: [
-      "https://drive.google.com/file/d/1TPyDt-adADyAXAXBppqpQCd5J_sbYSD-/preview",
+      "https://drive.google.com/file/d/1-hMmgpzu7xbt-YqQuGRd_CGU6gJ3wMf4/preview",
     ],
   },
   {
     id: 3,
     name: "IKAD",
-    link: ["Catalogue IKAD"],
+    link: ["IKAD 2024","IKAD NEO SERIES"],
     pdf: [
-      "https://drive.google.com/file/d/13OfNB7q8b6KgpKCjbNTb1kixRagF2s4V/preview",
+      "https://drive.google.com/file/d/1I7u3VE3Aer4_H8-jUwPbnvXQtN6kH9Nc/preview",
+      "https://drive.google.com/file/d/1Z2vo84yv6sUsQLthf3cxK9UXDzfXVCKc/preview",
     ],
   },
   {
     id: 4,
     name: "JUPITER",
-    link: ["JUPITER 2021"],
+    link: ["JUPITER 2024"],
     pdf: [
-      "https://drive.google.com/file/d/123F_CqCBP8s3OQKEuHWZPsYiUN69JfT5/preview",
+      "https://drive.google.com/file/d/1wDxmQsTI-pvUHit_mLo5I8HQY6CsIH9b/preview",
     ],
   },
   {
     id: 5,
     name: "MILAN",
-    link: ["MILAN 2022"],
+    link: ["MILAN 2024"],
     pdf: [
-      "https://drive.google.com/file/d/1_oS6ZvrsPt-lV5R5hQ3hPUv2PRinNgw-/preview",
+      "https://drive.google.com/file/d/1R8F_Lmtx7g_M3UYZc_lah3OMxyvHekww/preview",
     ],
   },
   {
     id: 6,
     name: "PLATINUM",
-    link: ["PLATINUM CERAMIC 2022", "PLATINUM DTBS 50X50"],
+    link: ["Katalog ATPN Lengkap"],
     pdf: [
-      "https://drive.google.com/file/d/1cCs44Z8qQ_0t4qIsaNgV6Zgo8s2_4oHE/preview",
-      "https://drive.google.com/file/d/1ByLtRSanUl5fzWpoq4FkkSqrYTu0Hkyf/preview",
+      "https://drive.google.com/file/d/15LbJ5lUtydl21UzMMbTVly06sSgvJBSv/preview"
     ],
   },
   {
     id: 7,
     name: "ROMAN",
     link: [
-      "Roman Floor Tile 050422",
-      "Roman Interlok 050422",
-      "Roman Interlok Hexagonal 050422",
-      "Roman Rectificado 050422",
-      "Roman Wall Tile 050422",
+      "Roman Floor Tile 2024",
+      "Roman Interlok 2024",
+      "Roman Interlok Hexagonal 2024",
+      "Roman Rectificado 2024",
+      "Roman Wall Tile 2024",
     ],
     pdf: [
-      "https://drive.google.com/file/d/1kgkhal1JKTDdugMMLh4_oIOvM7w7CvGg/preview",
-      "https://drive.google.com/file/d/1q7iYLM-MAIr1aEV557mR5hKU59VWKntR/preview",
-      "https://drive.google.com/file/d/1lMttpDQYEy7bR1obsYLeI-gTgCjwVBBn/preview",
-      "https://drive.google.com/file/d/1-DQOsrvkUOx4EgdExOWbPWrX9GzXltix/preview",
-      "https://drive.google.com/file/d/1gvgXP3DzQ4m3ZFr3kkAZqxpPrPiD4yny/preview",
+      "https://drive.google.com/file/d/1545Rfo9t3bWLP5-DYeYRj2OfOk1kbaIS/preview",
+      "https://drive.google.com/file/d/17RDqwr6rkr07poEUSSuN0jgpo-X7XA18/preview",
+      "https://drive.google.com/file/d/1kEtaYqmJzQyfxbWwnIJTAkhpO8Qd13qf/preview",
+      "https://drive.google.com/file/d/1XsHnuBjXbtv1QI0OXLqdNLUnTlNY0sdU/preview",
+      "https://drive.google.com/file/d/1NSrMeqmPPA1NmfPoyj5Cc9NJmVUVGSV9/preview",
     ],
+  },
+  {
+    id: 8,
+    name: "ELLAGRESS", 
+    link: ["Ellagress"], 
+    pdf: ["https://drive.google.com/file/d/19HHCd6itweugHJEaJs5vBULQjIcL0gGl/preview"]
+  },
+  {
+    id: 9,
+    name: "MULIA",
+    link: ["E Leaflet Product 2024"],
+    pdf: ["https://drive.google.com/file/d/1pPs9Q6fExh6VIA8-U8-BkRfpVpiHbuHy/preview"]
+  },
+  {
+    id: 10,
+    name: "MOSAIC TILES MANDIRI",
+    link: ["Mosaic Tiles Mandiri"],
+    pdf: ["https://drive.google.com/file/d/1v-syQzN5Piv_hU2lmHIXZSS_sU45UA5v/preview"]
+  },
+  {
+    id: 11,
+    name: "SINGRESS",
+    link: ["Singres Tiles Catalogue"],
+    pdf: ["https://drive.google.com/file/d/1opd5ReXc7Yh7ivQGdj3ajsd-5c9tYdP-/preview"]
   },
 ];
 
@@ -195,6 +219,10 @@ function CeramicComponent() {
               {brand === "MILAN" ? mainImage("MILAN") : null}
               {brand === "PLATINUM" ? mainImage("PLATINUM") : null}
               {brand === "ROMAN" ? mainImage("ROMAN") : null}
+              {brand === "ELLAGRESS" ? mainImage("ROMAN") : null}
+              {brand === "MULIA" ? mainImage("ROMAN") : null}
+              {brand === "MOSAIC TILES MANDIRI" ? mainImage("ROMAN") : null}
+              {brand === "SINGRES" ? mainImage("ROMAN") : null}
             </div>
             <div className="pt-[40px]">
               <h2>About Product</h2>
@@ -223,7 +251,7 @@ function CeramicComponent() {
                     <div className="border w-[90px] h-[90px] xl:w-[150px] xl:h-[150px] relative">
                       <Image
                         className="object-contain cursor-pointer"
-                        src={`/products/Ceramic/${brand}/pdf/${obj}.png`}
+                        src={`/products/Ceramic/${brand}/pdf/${brand}.png`}
                         alt="logo"
                         layout="fill"
                       />
@@ -236,11 +264,11 @@ function CeramicComponent() {
                     <iframe
                       src={`/products/Ceramic/${brand}/pdf/${pdf}.pdf`}
                       type="application/pdf"
-                      className="w-full h-[900px] hidden md:flex"
+                      className="w-full h-[900px] hidden"
                     ></iframe>
                     <iframe
                       src={googlePdf}
-                      className="w-full h-[500px] md:hidden"
+                      className="w-full h-[500px] md:h-[900px]"
                       allow="autoplay"
                     ></iframe>
                   </div>

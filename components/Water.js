@@ -7,17 +7,24 @@ const graniteTiles = [
   {
     id: 1,
     name: "ARISTON",
-    link: ["Catalogue Ariston 2022 -1-18"],
+    link: ["Catalogue Ariston 2024"],
     pdf: [
-      "https://drive.google.com/file/d/1typcxTv5UzSdX-h8ozRj3T2nDdzU5cqa/preview",
+      "https://drive.google.com/file/d/1clJ1gXJzhsevah0UC1MwxTKnYILLuLf8/preview",
     ],
   },
   {
     id: 2,
     name: "PROFIL TANK",
-    link: ["ProfilTank Brosur"],
+    link: ["2024_PE", "2024_BPE", "2024_PRO", "2024_STONE", "2024_PS", "2024_ST", "2024_TDA", "Profil Tank 2024"],
     pdf: [
-      "https://drive.google.com/file/d/1dwd9nysWKr_ckIH2UUV_H70AH9hrVuVo/preview",
+      "https://drive.google.com/file/d/15mRy0S6Ygs-VVfJ0VjxjLqWYlYB_3BnW/preview",
+      "https://drive.google.com/file/d/1B3Ep-xS9-cpcXGIwwbk76zKwy3tQGxx0/preview",
+      "https://drive.google.com/file/d/1l3hHDrS63im64ElbLbirEcp43LU_h6uz/preview",
+      "https://drive.google.com/file/d/11xhPIoUfso9XbuJY7WCzD-7J7LVO5WAS/preview",
+      "https://drive.google.com/file/d/12d865T2Z6lEG1KSw-VSEsEom5kwQT6ok/preview",
+      "https://drive.google.com/file/d/1Skqvg2yU9BU4ZsgAjctbpV4poLKMf-M1/preview",
+      "https://drive.google.com/file/d/1uOZ18_FXp96Kp7PqwR-VbBn9WzRkORGC/preview",
+      "https://drive.google.com/file/d/1i6TpbBH4w2zW-UvbXJLYsvgNcBo6ZqYl/preview",
     ],
   },
   {
@@ -220,7 +227,7 @@ function WaterComponent() {
                     <div className="border w-[90px] h-[90px] xl:w-[150px] xl:h-[150px] relative">
                       <Image
                         className="object-contain cursor-pointer"
-                        src={`/products/Water Appliances/${brand}/pdf/${obj}.png`}
+                        src={`/products/Water Appliances/${brand}/pdf/${brand}.png`}
                         alt="logo"
                         layout="fill"
                       />

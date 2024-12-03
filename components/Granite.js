@@ -7,9 +7,9 @@ const graniteTiles = [
   {
     id: 1,
     name: "EFATA",
-    link: ["EFATA JUNI 2022"],
+    link: ["EFATA 2024"],
     pdf: [
-      "https://drive.google.com/file/d/1sbIN9TBzeXskMvYSPEAGSs4WtNKaVc3K/preview",
+      "https://drive.google.com/file/d/1znOF8zrblfICD9dYq1U7Ek3aX6khU84E/preview",
     ],
   },
   {
@@ -25,78 +25,84 @@ const graniteTiles = [
     name: "FICO",
     link: ["FICO GRESS GRANITE TILE"],
     pdf: [
-      "https://drive.google.com/file/d/170aoLHvmW3Vr7poF6FYBLeHFgpIcW6ac/preview",
+      "https://drive.google.com/file/d/12W3HBOLKoorFVZri1Zx3ZCEKKUOVS93I/preview",
     ],
   },
   {
     id: 4,
     name: "GRANITO",
-    link: ["GRANITO 2022-8"],
+    link: ["GRANITO"],
     pdf: [
-      "https://drive.google.com/file/d/12bGojGAkSXDCcwjb4sY6Yq-oeqtEsYjQ/preview",
+      "https://drive.google.com/file/d/1mXt37mf1MyjzPtbnye3-X_p7uhCg-eqA/preview",
     ],
   },
   {
     id: 5,
     name: "INDOGRESS",
-    link: ["INDOGRESS catalogue 2022"],
+    link: ["INDOGRESS catalogue 2024"],
     pdf: [
-      "https://drive.google.com/file/d/1_iFTJzwRtPFSuqe2vc_PlgdC0jdEMW-0/preview",
+      "https://drive.google.com/file/d/1dEbZ-ulejIArj05BGtzuMA-yFqlx5exY/preview",
     ],
   },
   {
     id: 6,
     name: "INFINITI",
-    link: ["INFINITI catalogue 2021"],
+    link: ["INFINITI catalogue 2024"],
     pdf: [
-      "https://drive.google.com/file/d/1g9juLAxoEMZYKTyZsGImhHFyzugyLGUr/preview",
+      "https://drive.google.com/file/d/17Lpk5qbZcz48NPCZsK_3yoVhfrRwaU43/preview",
     ],
   },
   {
     id: 7,
     name: "NIRO",
-    link: ["NIRO BIG SLAB 2022", "NIRO REGULAR SIZE 2022"],
+    link: ["NIRO BIG SLAB 2024", "NIRO REGULAR SIZE 2024"],
     pdf: [
-      "https://drive.google.com/file/d/1Uq_WO5Nvr7Ly4WRgWpewX4m7RTaZOQxk/preview",
-      "https://drive.google.com/file/d/19iWnzoiFRP8dBWdNvLnuDsxZattyP33W/preview",
+      "https://drive.google.com/file/d/1CkP-udzBmqZZ71NhTVwcqXfqFa0Sxw8A/preview",
+      "https://drive.google.com/file/d/1dJsm2O2RYIUlPAjz66DwR_YIzuR2HTYr/preview",
     ],
   },
   {
     id: 8,
     name: "PORTINO",
-    link: ["PORTINO catalogue 2022"],
+    link: ["PORTINO catalogue 2024"],
     pdf: [
-      "https://drive.google.com/file/d/13UyBJy08IsZedCVGIoJqAuIBENT0VNx8/preview",
+      "https://drive.google.com/file/d/1lKpUK_evkMDjGq2pvrp-cNzUh1uirSY7/preview",
     ],
   },
   {
     id: 9,
     name: "ROMAN GRANIT",
     link: [
-      "ROMAN GRANIT DESIGNMOOD 130721",
-      "ROMAN GRANIT GRANDE 130721",
-      "ROMAN GRANIT HARDROCK 130721",
-      "ROMAN GRANIT STEPTILE 130721",
-      "ROMAN GRANIT STONEMOOD 130721",
-      "ROMAN GRANIT VINTAGE 130721",
-      "ROMAN GRANIT WOODMOOD 130721",
+      "ROMAN GRANIT GRANDE",
+      "ROMAN GRANIT DESIGNMOOD",
+      "ROMAN GRANIT STONEMOOD",
+      "ROMAN GRANIT HARDROCK",
+      "ROMAN GRANIT STEPTILE",
+      "ROMAN GRANIT VINTAGE",
+      "ROMAN GRANIT GLASSMOOD",
+      "ROMAN GRANIT WOODMOOD",
+      "ROMAN GRANIT XTRA",
+      "ROMAN GRANIT FITMOOD"
     ],
     pdf: [
-      "https://drive.google.com/file/d/1oHGBPAc-4cV979DHPSVoktKWUownZveD/preview",
-      "https://drive.google.com/file/d/1Ss4QH01th7l4Wi_TKnPPgL2mzlUrIm04/preview",
-      "https://drive.google.com/file/d/1u7oWQrAXly3SxWbB15ULDVESS6DFTnOK/preview",
-      "https://drive.google.com/file/d/1plw7hbF55e4fH76HhGwi4JoburTD2r3d/preview",
-      "https://drive.google.com/file/d/1eE8sPXheqp5f5Dmt7HzoRUZvWJkukwVA/preview",
-      "https://drive.google.com/file/d/19CME8RPdyMB4FJejumVut8lse0K1u00B/preview",
-      "https://drive.google.com/file/d/1wPQAmZ6PDIiVQivy_QN00aHOxgY0JC41/preview",
+      "https://drive.google.com/file/d/10zoNTO--yJz4QTv7Q76hfpZ8KlqAaVmV/preview",
+      "https://drive.google.com/file/d/1uQvWgHZZXTQmad-MCa9o2GLPO4hb05tz/preview",
+      "https://drive.google.com/file/d/1tdQ7axuaFV7WphOAnYcuM44qLvvxuFjF/preview",
+      "https://drive.google.com/file/d/11tRz7G-XoFkoUiFCwPDHZIX-mYMso-7s/preview",
+      "https://drive.google.com/file/d/13ulbfJWqnw85H136hvzsfisPO_zPwPNr/preview",
+      "https://drive.google.com/file/d/19S2r70xc5uOm28H7q1h5cxO4Rf8Ox23p/preview",
+      "https://drive.google.com/file/d/1PdNtlUxXEAZUz62-tpuqHLCRaZcDuQr1/preview",
+      "https://drive.google.com/file/d/1u-lJHHk7VTEAaNWhYFa_49JcZV_obIH8/preview",
+      "https://drive.google.com/file/d/1sfK1U2AteiuVpPdeUwYUYVfD3X4mf9Zj/preview",
+      "https://drive.google.com/file/d/1cs4FIlYHnGHs9WQPMtosN8lMM50-xiV6/preview",
     ],
   },
   {
     id: 10,
     name: "SANDIMAS",
-    link: ["SANDIMAS granite catalgoue 2022"],
+    link: ["SANDIMAS granite catalgoue 2024"],
     pdf: [
-      "https://drive.google.com/file/d/1ntXmUK0DUJj6N6q1v8IMurqIYQAYhxvx/preview",
+      "https://drive.google.com/file/d/1KhqVmNTxhm8qY5K06to_67OEPnXzIUAu/preview",
     ],
   },
   {
@@ -110,48 +116,64 @@ const graniteTiles = [
   {
     id: 12,
     name: "TITANIUM",
-    link: ["TITANIUM general catalogue 0722"],
+    link: ["TITANIUM Rejuvenate", "Titanium 2024"],
     pdf: [
-      "https://drive.google.com/file/d/14JJbqDWaSJKcsQ8z-owlMK4Zyy7xZL8z/preview",
+      "https://drive.google.com/file/d/1GVG--Nd1qUPNMcfigddOrcmR9VyLMbuM/preview",
+      "https://drive.google.com/file/d/1kjsMlHKMbgdM1Bn7_PwB42up6u-XL6qy/preview",
     ],
   },
   {
     id: 13,
     name: "VALENTINO GRESS",
-    link: ["VALENTINO GRESS RETAIL 2022"],
+    link: ["VG Double Loading", "VG New Motif", "Catalogue VG", "VG Slip Proof & VG Pro"],
     pdf: [
-      "https://drive.google.com/file/d/1vbkCC0gXn6p6gs5qHjqQuotCFaYLFMqv/preview",
+      "https://drive.google.com/file/d/1PiKozxjdgy6UyGr363HAHgmTsf-yIAxh/preview",
+      "https://drive.google.com/file/d/1VrNZOb5MIpNa-7iK-i9c0ToxM7eoENGP/preview",
+      "https://drive.google.com/file/d/1cS-cN6IkdidnWoILYmkuKDOZCbjiXJSc/preview",
+      "https://drive.google.com/file/d/1ulwNAisHjfK35C2TxYTWyq6cR-yDT6L2/preview",
     ],
   },
   {
     id: 14,
     name: "VENUS TILES",
     link: [
-      "2022_e-Catalogue VCI Jkt Venus Tiles",
-      "2022_e-Catalogue Venus Tiles BIG SLAB",
-      "2022_e-Catalogue Venus Tiles New Arrival (Q1)",
+      "2024_e-Catalogue VCI Jkt Venus Tiles",
     ],
     pdf: [
-      "https://drive.google.com/file/d/1GA7zX-B6VC6us_VxEvDsDfALrtWFWzyp/preview",
-      "https://drive.google.com/file/d/1exp8fpCAqTBKJOD6_SgMNE27tRHsjkp6/preview",
-      "https://drive.google.com/file/d/1GfX0BxUzF3eFQVEhCvlAUB8GNGxnoY0d/preview",
+      "https://drive.google.com/file/d/1TtYxJ5izNdJFheBGPg0wEjvbLb1UVUZc/preview",
     ],
   },
   {
     id: 15,
     name: "VINCENZA",
     link: [
-      "Vicenza 2022 Digital Glazed tiles 100x100",
-      "Vicenza Catalogue 2021",
+      "Vicenza Digital Glazed tiles 100x100",
+      "Vicenza Digital Glazed tiles 60x120",
+      "Vicenza Digital Glazed tiles 75x150",
+      "Vicenza Digital Glazed tiles",
       "Vicenza Rustic Tiles",
       "Vicenza Wood Ceramics",
     ],
     pdf: [
-      "https://drive.google.com/file/d/13-9fVOD0Sb8xnCsB2xhOkPlCmVMLy_Kw/preview",
-      "https://drive.google.com/file/d/136ZPNgqX4CQPWcGoVy3RKRTrcPw2U5mY/preview",
-      "https://drive.google.com/file/d/137f5wD8O_lK3AWC4jCGYrfeZ6ftX0SMf/preview",
-      "https://drive.google.com/file/d/1303qWG12DouhlZat6nXaPP-N4hJqRuB-/preview",
+      "https://drive.google.com/file/d/1QoHIee9zSUAyJ7XH8Xdp4sOSQO9iwI-v/preview",
+      "https://drive.google.com/file/d/1CjfQpsky5S3QPzyiPwLXfpKXbKZDp0Ql/preview",
+      "https://drive.google.com/file/d/1NUtc55rqbuESJvRLGsWyMworiNzJtwp5/preview",
+      "https://drive.google.com/file/d/1IOjeyoNOgNcvadw4GWFwEcE5meLPKnVZ/preview",
+      "https://drive.google.com/file/d/1aVftzGAr6XJFsFF8f74uptcST45i2phB/preview",
+      "https://drive.google.com/file/d/1k39TT15QcFXRLs0Y8gGJ1NREQYhdoT5B/preview",
     ],
+  },
+  {
+    id: 16,
+    name: "MELIUZ",
+    link: ["Meliuz"],
+    pdf: ["https://drive.google.com/file/d/15fIMI1JLsen13OC7Ibke0drvUow0Bc87/preview"]
+  },
+  {
+    id: 17,
+    name: "VELLINO",
+    link: ["Vellino"],
+    pdf: ["https://drive.google.com/file/d/1-oV0VzmyALUOkfPOHYqGKco8FvZIGE5y/preview"]
   },
 ];
 
@@ -283,6 +305,8 @@ function GraniteComponent() {
                 : null}
               {brand === "VENUS TILES" ? mainImage("VENUS TILES") : null}
               {brand === "VINCENZA" ? mainImage("VINCENZA") : null}
+              {brand === "MELIUZ" ? mainImage("MELIUZ") : null}
+              {brand === "VELLINO" ? mainImage("VELLINO") : null}
             </div>
             <div className="pt-[40px]">
               <h2>About Product</h2>
