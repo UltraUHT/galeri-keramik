@@ -91,8 +91,8 @@ const graniteTiles = [
   },
   {
     id: 11,
-    name: "SINGRESS",
-    link: ["Singres Tiles Catalogue"],
+    name: "SINGRES",
+    link: ["Singress Tiles Catalogue"],
     pdf: ["https://drive.google.com/file/d/1opd5ReXc7Yh7ivQGdj3ajsd-5c9tYdP-/preview"]
   },
 ];
@@ -219,10 +219,10 @@ function CeramicComponent() {
               {brand === "MILAN" ? mainImage("MILAN") : null}
               {brand === "PLATINUM" ? mainImage("PLATINUM") : null}
               {brand === "ROMAN" ? mainImage("ROMAN") : null}
-              {brand === "ELLAGRESS" ? mainImage("ROMAN") : null}
-              {brand === "MULIA" ? mainImage("ROMAN") : null}
-              {brand === "MOSAIC TILES MANDIRI" ? mainImage("ROMAN") : null}
-              {brand === "SINGRES" ? mainImage("ROMAN") : null}
+              {brand === "ELLAGRESS" ? mainImage("ELLAGRESS") : null}
+              {brand === "MULIA" ? mainImage("MULIA") : null}
+              {brand === "MOSAIC TILES MANDIRI" ? mainImage("MOSAIC TILES MANDIRI") : null}
+              {brand === "SINGRES" ? mainImage("SINGRES") : null}
             </div>
             <div className="pt-[40px]">
               <h2>About Product</h2>

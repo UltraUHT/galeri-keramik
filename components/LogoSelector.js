@@ -41,7 +41,7 @@ const productType2 = [
       "ellagress",
       "mulia",
       "mosaic tiles mandiri",
-      "singress",
+      "singres",
     ],
   },
   {
