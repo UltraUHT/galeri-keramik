@@ -11,8 +11,7 @@ import Whatsapp from "../components/Whatsapp";
 export default function Home() {
   return (
     <div>
-      <Head>
-        <Script
+      <Script id="gtagscript"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -22,6 +21,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MSH8C97');`,
           }}
         ></Script>
+      <Head>
+        
         <title>Galeri Keramik</title>
         <meta
           name="description"
