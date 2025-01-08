@@ -92,7 +92,7 @@ const graniteTiles = [
   {
     id: 11,
     name: "SINGRES",
-    link: ["Singress Tiles Catalogue"],
+    link: ["Singres Tiles Catalogue"],
     pdf: ["https://drive.google.com/file/d/1opd5ReXc7Yh7ivQGdj3ajsd-5c9tYdP-/preview"]
   },
 ];
