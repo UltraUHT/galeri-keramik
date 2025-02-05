@@ -22,7 +22,7 @@ const productType2 = [
       "valentino gress",
       "venus tiles",
       "vincenza",
-      "velino",
+      "vellino",
       "meliuz"
     ],
     link: ["NIRO", "TITANIUM", "SUMMIT", "VENUS TILES"],
@@ -40,7 +40,7 @@ const productType2 = [
       "roman",
       "ellagress",
       "mulia",
-      "singress",
+      "singres",
       "mosaic tiles mandiri"
     ],
     link: ["PLATINUM", "ROMAN", "HABITAT", "MILAN"],
