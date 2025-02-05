@@ -22,6 +22,8 @@ const productType2 = [
       "valentino gress",
       "venus tiles",
       "vincenza",
+      "velino",
+      "meliuz"
     ],
     link: ["NIRO", "TITANIUM", "SUMMIT", "VENUS TILES"],
   },
@@ -36,6 +38,10 @@ const productType2 = [
       "milan",
       "platinum",
       "roman",
+      "ellagress",
+      "mulia",
+      "singress",
+      "mosaic tiles mandiri"
     ],
     link: ["PLATINUM", "ROMAN", "HABITAT", "MILAN"],
   },
